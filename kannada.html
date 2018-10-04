@@ -173,10 +173,10 @@
 				</div>
             </div>
             <div class="tabs col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <button class="tablink" onclick="openPage('Home', this, 'none')" id="defaultOpen">Groom</button>
-                    <button class="tablink" onclick="openPage('News', this, 'none')">Brides</button>
+                    <button class="tablink_matches" onclick="openPage('Home', this, 'none')" id="defaultOpen">Groom</button>
+                    <button class="tablink_matches" onclick="openPage('News', this, 'none')">Brides</button>
                     
-                            <div id="Home" class="tabcontent">
+                            <div id="Home" class="tabcontent_matches">
                                 <div class="row mar">
                                     <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12 cols">
                                         <div class="product-thumb">
@@ -330,7 +330,7 @@
                                 </div>
                             </div>
                           
-                          <div id="News" class="tabcontent">
+                          <div id="News" class="tabcontent_matches">
                             <div class="row mar">
                                 <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12 cols">
                                     <div class="product-thumb">
@@ -543,12 +543,12 @@
 <!-- footer end here -->
 <script>
     function openPage(pageName,elmnt,color) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        var i, tabcontent_matches, tablinks;
+        tabcontent_matches = document.getElementsByClassName("tabcontent_matches");
+        for (i = 0; i < tabcontent_matches.length; i++) {
+            tabcontent_matches[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablink");
+        tablinks = document.getElementsByClassName("tablink_matches");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].style.backgroundColor = "";
         }
