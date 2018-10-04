@@ -1,1 +1,27 @@
-hii nityaaaaa.awesome2222222222222222222
+
+/* Style bride & groom tab links */
+.tablink_matches {
+    background-color: rgb(150, 71, 71);
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+	width: 50%;
+	border-radius: 10px;
+}
+
+.tablink_matches:hover {
+    background-color: rgb(92, 106, 143);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent_matches {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+/* Style bride & groom tab links end*/
