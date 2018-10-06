@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+$user_id=$_SESSION["uid"];
+include_once('config.php');
+
+$sql="SELECT * from register WHERE user_id=".$_SESSION["uid"];
+$res=$mysqli->query($sql);
+
 	$mysqli = new mysqli("localhost", "root", "", "matrimony");
 	if ($mysqli->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -81,7 +89,7 @@
 </head>
 
 <body>
-	<!-- <?php include_once("header.php");?> -->
+	<?php include_once("header.php");?>
 	<!--top start here -->
 	<div class="bread-crumb">
 			<div class="container">
@@ -198,19 +206,19 @@
 													<div class="col-md-10 input-padding">
 														<select class="selectpicker form-control bs-select-hidden" name="caste">
 	                        <option value="1">Select Caste</option>
-	                        <option value="2">Teli</option>
-	                        <option value="3">obc</option>
-	                        <option value="4">sc/st</option>
+	                        <option value="Teli">Teli</option>
+	                        <option value="obc">obc</option>
+	                        <option value="sc/st">sc/st</option>
 	                      </select></div>
 												</div>
 												<div class="paddright">
 													<div class="col-md-2"><span>Sub-Caste</span></div>
 													<div class="col-md-10 input-padding">
 														<select class="selectpicker form-control bs-select-hidden" name="sub_caste">
-	                    <option value="1">Select Caste</option>
-	                    <option value="2">Teli</option>
-	                    <option value="3">obc</option>
-	                    <option value="4">sc/st</option>
+	                    <option value="Select Caste">Select Caste</option>
+	                    <option value="Teli">Teli</option>
+	                    <option value="obc">obc</option>
+	                    <option value="sc/st">sc/st</option>
 	                  </select></div>
 												</div>
 												<div class="paddright">
@@ -271,34 +279,34 @@
 												<div class="col-md-2"><span>Star</span></div>
 												<div class="col-md-10 input-padding">
 													<select class="selectpicker form-control" name="star">
-													<option value="1">Select Star</option>
-													<option value="2">Ashwini</option>
-													<option value="3">Bharani</option>
-													<option value="4">Krittika</option>
-													<option value="5">Rohini</option>
-													<option value="6">Mrigashira</option>
-													<option value="7">Ardra</option>
-													<option value="8">Punarvasu</option>
-													<option value="9">Pushya</option>
-													<option value="10">Ashlesha</option>
-													<option value="11">Magha</option>
-													<option value="12">Purva Phalguni</option>
-													<option value="13">Uttara Phalguni</option>
-													<option value="14">Hasta</option>
-													<option value="15">Chitra</option>
-													<option value="16">Swati</option>
-													<option value="17">Vishakha</option>
-													<option value="18">Anuradha</option>
-													<option value="19">Jyeshtha</option>
-													<option value="20">Mula</option>
-													<option value="21">Purva Ashadha</option>
-													<option value="22">Uttara Ashadha</option>
-													<option value="23">Shravana</option>
-													<option value="24">Dhanishta</option>
-													<option value="25">ShataBhisha</option>
-													<option value="26">Purva Bhadrapada</option>
-													<option value="27">Uttara Bhadrapada</option>
-													<option value="28">Revati</option>
+													<option value="Select Star">Select Star</option>
+													<option value="Ashwini">Ashwini</option>
+													<option value="Bharani">Bharani</option>
+													<option value="Krittika">Krittika</option>
+													<option value="Rohini">Rohini</option>
+													<option value="Mrigashira">Mrigashira</option>
+													<option value="Ardra">Ardra</option>
+													<option value="Punarvasu">Punarvasu</option>
+													<option value="Pushya">Pushya</option>
+													<option value="Ashlesha">Ashlesha</option>
+													<option value="Magha">Magha</option>
+													<option value="Purva Phalguni">Purva Phalguni</option>
+													<option value="Uttara Phalguni">Uttara Phalguni</option>
+													<option value="Hasta">Hasta</option>
+													<option value="Chitra">Chitra</option>
+													<option value="Swati">Swati</option>
+													<option value="Vishakha">Vishakha</option>
+													<option value="Anuradha">Anuradha</option>
+													<option value="Jyeshtha">Jyeshtha</option>
+													<option value="Mula">Mula</option>
+													<option value="Purva Ashadha">Purva Ashadha</option>
+													<option value="Uttara Ashadha">Uttara Ashadha</option>
+													<option value="Shravana">Shravana</option>
+													<option value="Dhanishta">Dhanishta</option>
+													<option value="ShataBhisha">ShataBhisha</option>
+													<option value="Purva Bhadrapada">Purva Bhadrapada</option>
+													<option value="Uttara Bhadrapada">Uttara Bhadrapada</option>
+													<option value="Revati">Revati</option>
 												</select>
 											</div>
 											</div>
@@ -306,19 +314,19 @@
 												<div class="col-md-2"><span>Raashi</span></div>
 												<div class="col-md-10 input-padding">
 													<select class="selectpicker form-control" name="rashi">
-								<option value="1">Select Raasi</option>
-								<option value="2">Mesha - Aries</option>
-								<option value="3">Vrishabha - Taurus</option>
-								<option value="4">Mithuna - Gemini</option>
-								<option value="5">Karka - Cancer</option>
-								<option value="6">Simha - Leo</option>
-								<option value="7">Kanya - Virgo</option>
-								<option value="8">Tula - Libra </option>
-								<option value="9">Vrishchika - Scorpio</option>
-								<option value="10">Dhanu - Sagittarius</option>
-								<option value="11">Makara - Capricorn</option>
-								<option value="12">Kumbha - Aquarius</option>
-								<option value="13">Meena - Pisces</option>
+								<option value="Select Raasi">Select Raasi</option>
+								<option value="Mesha - Aries">Mesha - Aries</option>
+								<option value="Vrishabha - Taurus">Vrishabha - Taurus</option>
+								<option value="Mithuna - Gemini">Mithuna - Gemini</option>
+								<option value="Karka - Cancer">Karka - Cancer</option>
+								<option value="Simha - Leo">Simha - Leo</option>
+								<option value="Kanya - Virgo">Kanya - Virgo</option>
+								<option value="Tula - Libra">Tula - Libra </option>
+								<option value="Vrishchika - Scorpio">Vrishchika - Scorpio</option>
+								<option value="Dhanu - Sagittarius">Dhanu - Sagittarius</option>
+								<option value="Makara - Capricorn">Makara - Capricorn</option>
+								<option value="Kumbha - Aquarius">Kumbha - Aquarius</option>
+								<option value="Meen - Pisces">Meen - Pisces</option>
 
 							</select>
 											</div>
@@ -328,65 +336,65 @@
 													<div class="col-md-3 input-padding">
 															<select class="selectpicker form-control" name="birth_time">
 																<option value="1">Hour</option>
-																<option value="2">0</option>
-																<option value="3">1</option>
-																<option value="4">2</option>
-																<option value="5">3</option>
-																<option value="6">4</option>
-																<option value="7">5</option>
-																<option value="8">6</option>
-																<option value="9">7</option>
-																<option value="10">8</option>
-																<option value="11">9</option>
-																<option value="11">10</option>
+																<option value="0">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
 																<option value="11">11</option>
-																<option value="11">12</option>
-																<option value="11">13</option>
-																<option value="11">14</option>
-																<option value="11">15</option>
-																<option value="11">16</option>
-																<option value="11">17</option>
-																<option value="11">18</option>
-																<option value="11">19</option>
-																<option value="11">20</option>
-																<option value="11">21</option>
-																<option value="11">22</option>
-																<option value="11">23</option>
+																<option value="12">12</option>
+																<option value="13">13</option>
+																<option value="14">14</option>
+																<option value="15">15</option>
+																<option value="16">16</option>
+																<option value="17">17</option>
+																<option value="18">18</option>
+																<option value="19">19</option>
+																<option value="20">20</option>
+																<option value="21">21</option>
+																<option value="22">22</option>
+																<option value="23">23</option>
 															</select>
 								</div>
 								<div class="col-md-3 input-padding">
 									<select class="selectpicker form-control" name="birth_minute">
 									<option value="1">Minute</option>
-									<option value="2">0</option>
-									<option value="3">1</option>
-									<option value="4">2</option>
-									<option value="5">3</option>
-									<option value="6">4</option>
-									<option value="7">5</option>
-									<option value="8">6</option>
-									<option value="9">7</option>
-									<option value="10">8</option>
-									<option value="11">9</option>
-									<option value="11">10</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
 									<option value="11">11</option>
-									<option value="11">12</option>
-									<option value="11">13</option>
-									<option value="11">14</option>
-									<option value="11">15</option>
-									<option value="11">16</option>
-									<option value="11">17</option>
-									<option value="11">18</option>
-									<option value="11">19</option>
-									<option value="11">20</option>
-									<option value="11">21</option>
-									<option value="11">22</option>
-									<option value="11">23</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
 									</select>
 								</div>
 								<div class="col-md-3 input-padding">
 									<select class="selectpicker form-control" name="birth_period">
-										<option value="1">AM</option>
-										<option value="2">PM</option>
+										<option value="AM">AM</option>
+										<option value="PM">PM</option>
 									</select>
 									</div>
 							</div>
@@ -425,14 +433,14 @@
 												<div class="col-md-2"><span>Highest Education</span></div>
 												<div class="col-md-10 input-padding">
 													<select class="selectpicker form-control" name="education">
-                      <option value="1">Select Education</option>
-                      <option value="2">Accounting (BS, BA)</option>
-                      <option value="3">Aerospace Studies (Air Force ROTC)</option>
-                      <option value="4">Agribusiness (BS)</option>
-                      <option value="5">Agricultural Communication and Journalism (BS)</option>
-                      <option value="6">Agricultural Education (BS)</option>
-                      <option value="7">Agricultural Machinery Technology Certificate (AAS, Cert)</option>
-                      <option value="8">Agricultural Science (AS)</option>
+                      <option value="Select Education">Select Education</option>
+                      <option value="Accounting (BS, BA)">Accounting (BS, BA)</option>
+                      <option value="Aerospace Studies (Air Force ROTC)">Aerospace Studies (Air Force ROTC)</option>
+                      <option value="Agribusiness (BS)">Agribusiness (BS)</option>
+                      <option value="Agricultural Communication and Journalism (BS)">Agricultural Communication and Journalism (BS)</option>
+                      <option value="Agricultural Education (BS)">Agricultural Education (BS)</option>
+                      <option value="Agricultural Machinery Technology Certificate (AAS, Cert)">Agricultural Machinery Technology Certificate (AAS, Cert)</option>
+                      <option value="Agricultural Science (AS)">Agricultural Science (AS)</option>
                     </select>
 												</div>
 											</div>
@@ -441,17 +449,17 @@
 												<div class="col-md-2"><span>Occupation</span></div>
 												<div class="col-md-10 input-padding">
 													<select class="selectpicker form-control" name="occupation">
-                        <option value="1">Select Occupation</option>
-                        <option value="2">Chartered Administrators</option>
-                        <option value="3">Audiologists</option>
-                        <option value="4">Certified Human Resources and Industrial Relations Counsellors</option>
-                        <option value="5">Guidance Counsellors</option>
-                        <option value="6">Criminologists</option>
-                        <option value="7">Dieticians</option>
-                        <option value="8">Occupational Therapists</option>
-                        <option value="9">Chartered Appraisers</option>
-                        <option value="10">Dental Hygienists</option>
-                        <option value="11">Nursing Assistants</option>
+                        <option value="Select Occupation">Select Occupation</option>
+                        <option value="Chartered Administrators">Chartered Administrators</option>
+                        <option value="Audiologists">Audiologists</option>
+                        <option value="Certified Human Resources and Industrial Relations Counsellors">Certified Human Resources and Industrial Relations Counsellors</option>
+                        <option value="Guidance Counsellors">Guidance Counsellors</option>
+                        <option value="Criminologists">Criminologists</option>
+                        <option value="Dieticians">Dieticians</option>
+                        <option value="Occupational Therapists">Occupational Therapists</option>
+                        <option value="Chartered Appraisers">Chartered Appraisers</option>
+                        <option value="Dental Hygienists">Dental Hygienists</option>
+                        <option value="Nursing Assistants">Nursing Assistants</option>
                       </select>
 												</div>
 											</div>
@@ -459,20 +467,20 @@
 												<div class="col-md-2"><span>Annual Income</span></div>
 												<div class="col-md-5 input-padding">
 													<select class="selectpicker form-control" name="currency">
-                          <option value="1">Select Currency</option>
-                          <option value="2">Indian Rupee</option>
-                          <option value="3">US Dollar</option>
+                          <option value="Select Currency">Select Currency</option>
+                          <option value="Indian Rupee">Indian Rupee</option>
+                          <option value="US Dollar">US Dollar</option>
                         </select>
 												</div>
 												<div class="col-md-5 input-padding">
 													<select class="selectpicker form-control" name="income">
-                            <option value="1">Select Income</option>
-                            <option value="2">10,000-30,000</option>
-                            <option value="3">31,000-50,000</option>
-                            <option value="3">51,000-70,000</option>
-                            <option value="3">71,000-90,000</option>
-                            <option value="3">91,000-110,000</option>
-                            <option value="3">110,001-130,000</option>
+                            <option value="Select Income">Select Income</option>
+                            <option value="10,000-30,000">10,000-30,000</option>
+                            <option value="31,000-50,000">31,000-50,000</option>
+                            <option value="51,000-70,000">51,000-70,000</option>
+                            <option value="71,000-90,000">71,000-90,000</option>
+                            <option value="91,000-110,000">91,000-110,000</option>
+                            <option value="110,001-130,000">110,001-130,000</option>
                           </select>
 												</div>
 											</div>
@@ -512,10 +520,10 @@
 												<div class="col-md-2"><span>Father Status</span></div>
 												<div class="col-md-10 input-padding">
 														<select class="selectpicker form-control" name="father_status">
-							  							<option value="1">select father status</option>
-							  							<option value="2">Working</option>
-							  							<option value="3">Retired</option>
-							  							<option value="4">Expired</option>
+							  							<option value="select father status">select father status</option>
+							  							<option value="Working">Working</option>
+							  							<option value="Retired">Retired</option>
+							  							<option value="Expired">Expired</option>
 							  							</select>
 											</div>
 					  </div>
@@ -523,11 +531,11 @@
 						<div class="col-md-2"><span>Mother Status</span></div>
 						<div class="col-md-10 input-padding">
 							<select class="selectpicker form-control" name="mother_status">
-							  <option value="1">select Mother status</option>
-							  <option value="2">Working</option>
-							  <option value="3">Retired</option>
-							  <option value="4">Expired</option>
-							  <option value="5">HomeMaker</option>
+							  <option value="select Mother status">select Mother status</option>
+							  <option value="Working">Working</option>
+							  <option value="Retired">Retired</option>
+							  <option value="Expired">Expired</option>
+							  <option value="HomeMaker">HomeMaker</option>
 							  </select>
 					  </div>
 					  </div>
@@ -535,34 +543,34 @@
 						<div class="col-md-2"><span>Brother Status</span></div>
 						<div class="col-md-5 input-padding">
 							<select class="selectpicker form-control" name="brother_status">
-							  <option value="1">No. of Brothers</option>
-							  <option value="2">0</option>
-							  <option value="3">1</option>
-							  <option value="4">2</option>
-							  <option value="5">3</option>
-							  <option value="6">4</option>
-							  <option value="7">5</option>
-							  <option value="8">6</option>
-							  <option value="9">7</option>
-							  <option value="10">8</option>
-							  <option value="11">9</option>
-							  <option value="12">10</option>
+							  <option value="No. of Brothers">No. of Brothers</option>
+							  <option value="0">0</option>
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="6">6</option>
+							  <option value="7">7</option>
+							  <option value="8">8</option>
+							  <option value="9">9</option>
+							  <option value="10">10</option>
 							  </select>
 					  </div>
 					  <div class="col-md-5 input-padding">
 						  <select class="selectpicker form-control" name="brothers_married">
-							<option value="1">Brothers Married</option>
-							<option value="2">0</option>
-							<option value="3">1</option>
-							<option value="4">2</option>
-							<option value="5">3</option>
-							<option value="6">4</option>
-							<option value="7">5</option>
-							<option value="8">6</option>
-							<option value="9">7</option>
-							<option value="10">8</option>
-							<option value="11">9</option>
-							<option value="12">10</option>
+							<option value="Brothers Married">Brothers Married</option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
 							</select>
 					</div>
 					  </div>
@@ -570,34 +578,34 @@
 						<div class="col-md-2"><span>Sister Status</span></div>
 						<div class="col-md-5 input-padding">
 							<select class="selectpicker form-control" name="sister_status">
-							  <option value="1">No. of Sister's</option>
-							  <option value="2">0</option>
-							  <option value="3">1</option>
-							  <option value="4">2</option>
-							  <option value="5">3</option>
-							  <option value="6">4</option>
-							  <option value="7">5</option>
-							  <option value="8">6</option>
-							  <option value="9">7</option>
-							  <option value="10">8</option>
-							  <option value="11">9</option>
-							  <option value="12">10</option>
+							  <option value="No. of Sister's">No. of Sister's</option>
+							  <option value="0">0</option>
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="6">6</option>
+							  <option value="7">7</option>
+							  <option value="8">8</option>
+							  <option value="9">9</option>
+							  <option value="10">10</option>
 							  </select>
 					  </div>
 					  <div class="col-md-5 input-padding">
 						  <select class="selectpicker form-control" name="sisters_married">
-							<option value="1">Sister's Married</option>
-							<option value="2">0</option>
-							<option value="3">1</option>
-							<option value="4">2</option>
-							<option value="5">3</option>
-							<option value="6">4</option>
-							<option value="7">5</option>
-							<option value="8">6</option>
-							<option value="9">7</option>
-							<option value="10">8</option>
-							<option value="11">9</option>
-							<option value="12">10</option>
+							<option value="Sister's Married">Sister's Married</option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
 							</select>
 					</div>
 					  </div>
@@ -605,9 +613,9 @@
 					 <div class="col-md-2"><span>Parents Contact No.</span></div>
 					 <div class="col-md-5 input-padding">
 						 <select class="selectpicker form-control" name="country_code">
-							 <option value="1">select Country Code</option>
-							 <option value="2">001</option>
-							 <option value="3">+91</option>
+							 <option value="select Country Code">select Country Code</option>
+							 <option value="001">001</option>
+							 <option value="+91">+91</option>
 							 </select>
 					 </div>
 					 <div class="col-md-5 input-padding">
@@ -672,7 +680,7 @@
 											<div class="paddright">
 												<div class="col-md-2"></div>
 												<div class="col-md-10 input-padding">
-													<textarea class="form-control" rows="5" id="comment"name="about" placeholder="Few Lines About Yourself"></textarea>
+													<textarea class="form-control" rows="5" id="comment" name="about" placeholder="Few Lines About Yourself"></textarea>
 												</div>
 											</div>
 										</div>
