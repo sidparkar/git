@@ -1,16 +1,9 @@
 <?php
 
-session_start();
-$user_id=$_SESSION["uid"];
+
 include_once('config.php');
 
-$sql="SELECT * from register WHERE user_id=".$_SESSION["uid"];
-$res=$mysqli->query($sql);
 
-	$mysqli = new mysqli("localhost", "root", "", "matrimony");
-	if ($mysqli->connect_errno) {
-		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
 	if(isset($_POST['submit'])){
 		$user_martial = $_POST['martial_status'];
 		$user_height = $_POST['height'];
@@ -55,8 +48,12 @@ $res=$mysqli->query($sql);
 			if(!$res){
 				echo $res=$mysqli->error;
 			}else{
-				echo "<script>alert('Info Added Successfully')</script>";
+				echo "<script>alert('Info Added Successfully')
+				window.location.href='login.php';
+				</script>";
 			}
+			
+		
  	}
 	?>
 <!DOCTYPE html>

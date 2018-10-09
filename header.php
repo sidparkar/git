@@ -1,10 +1,9 @@
+
+
   <header>
 <div class="top">
   <div class="container">
     <div class="row">
-
-          <div class="">
-
             <div class="" id="myTopnav">
 
               <div class="content">
@@ -16,9 +15,9 @@
                     <div class="animated fadeIn mega-menu">
                       <div class="mega-menu-wrap">
                         <div class="row">
-                           <div class="col-md-2">
-                          <ul class="nav nav-pills nav-stacked col-md-2">
-                          <li class=""><a href="#tab_a" data-toggle="pill">Mother tongue</a></li>
+                           <div class="col-md-2" style="background-color:#ccc; text-align:center;">
+                          <ul class="nav nav-pills nav-stacked col-md-2 header-style">
+                          <li class="active"><a href="#tab_a" data-toggle="pill">Mother tongue</a></li>
                           <li><a href="#tab_b" data-toggle="pill">Caste</a></li>
                           <li><a href="#tab_c" data-toggle="pill">Religion</a></li>
                           <li><a href="#tab_d" data-toggle="pill">Occupation</a></li>
@@ -478,7 +477,7 @@
                            </div>
                          </div>
           </div>
-          <div class="tab-pane active scrollstyle1" id="tab_e">
+          <div class="tab-pane scrollstyle1" id="tab_e">
             <div class="row">
                           <div class="col-md-4">
                             <ul class="clearfix hor_list">
@@ -539,19 +538,22 @@
 
 <li class="drop-down" id="user-ac">
   <a href="#">
-    <img src="images/user-profile.png" width="30"></a>
+    <img src="images/user-profile.png" width="21px"></a>
   <!--Drop Down-->
   <ul class="drop-down-ul animated fadeIn">
-  <li><a href="#">John Doe(R123523)</a>
-<div class="edit-user" style="background-color:#f1f1f1;">
-      <p>  <img src="images/file.png" width="30" style="padding-right: 9px;"><a href="#">Edit</a></p>
-          <p>  <img src="images/edit-user.png" width="30" style="padding-right: 9px;"><a href="#">Edit Partner Preference</a></p>
-            <p>  <img src="images/sun.png" width="30" style="padding-right: 9px;"><a href="#">Horoscope</a></p>
-              <p>  <img src="images/logout.png" width="30" style="padding-right: 9px;"><a href="#">Logout</a></p>
-            </div>
-
+  <li>
+    <?php
+        if(!isset($_SESSION['uid']))
+        {
+            echo '<a href="login.php">Login</a>';
+        }
+        else
+        {
+            echo '<a href="logout.php">Logout</a>';
+        }
+    ?>
   </li>
-  </ul>
+  <li><a href="#"><?php echo $row["username"]; ?> </a></li>
   <!--//End drop down-->
 
 </li>
@@ -563,7 +565,7 @@
               </div>
 
             </div>
-         </div>
+
         </div>
     </div>
   </div>
