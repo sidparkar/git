@@ -1,3 +1,13 @@
+<?php
+include_once('config.php');
+$sql="SELECT * FROM partner_preference WHERE id='2';";
+$sqlb="SELECT * FROM user_info WHERE id='6';";
+$result=mysqli_query($mysqli,$sql);
+$resultb=mysqli_query($mysqli,$sqlb);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -30,7 +40,7 @@
 
 <!-- header start here-->
 <!--top start here -->
-<?php include_once("header.php");?>
+<!-- <?php include_once("header.php");?> -->
 <!--top end here -->
 <!-- header end here -->
 
@@ -113,22 +123,24 @@
                 </div>
                 <hr style="width: 100%;">
 <div class="row">
+<?php
+      while($resb = mysqli_fetch_assoc($resultb)){
+      ?>
 <div class="col-md-6">
 
-    <p>Profile Created For:</p>
-    <p>Body Type/Complexion:</p>
-    <p>Physical Status:</p>
-    <p>Weight:</p>
-    <p>Martial Status:</p>
-    <p>Drinking Habits:</p>
+    <p>Profile Created For:<?php echo $resb['profile_for'];?></p>
+    <p>Physical Status:<?php echo $resb['disability'];?></p>
+    <p>Weight:<?php echo $resb['user_weight'];?></p>
+    <p>Martial Status:<?php echo $resb['caste'];?></p>
+    <p>Drinking Habits:<?php echo $resb['sub_caste'];?></p>
 </div>
 <div class="col-md-6">
     <p>Name:</p>
     <p>Age:</p>
-    <p>Height:</p>
+    <p>Height:<?php echo $resb['height'];?></p>
     <p>Mother Tongue:</p>
-    <p>Eating Habits:</p>
-    <p>Smoking Habits:</p>
+    <p>Eating Habits:<?php echo $resb['eating_habits'];?></p>
+    <p>Smoking Habits:<?php echo $resb['smoking_habits'];?></p>
 </div>
 </div>
 
@@ -149,14 +161,14 @@
 <div class="col-md-6">
 
     <p>Religion:</p>
-    <p>Caste/Sub-Caste:</p>
+    <p>Caste/Sub-Caste:<?php echo $resb['caste'];?>/<?php echo $resb['sub_caste'];?></p>
     <p>Gothram:</p>
-    <p>Star/Rashi:</p>
+    <p>Star/Rashi:<?php echo $resb['star'];?>/<?php echo $resb['rashi'];?></p>
 
 </div>
 <div class="col-md-6">
     <p>Time of Birth:</p>
-    <p>Place of Birth:</p>
+    <p>Place of Birth:<?php echo $resb['birth_city'];?>,<?php echo $resb['birth_place'];?></p>
       <p>Dosh:</p>
 </div>
 </div>
@@ -179,7 +191,7 @@
 <div class="col-md-6">
 
     <p>Country:</p>
-    <p>State:</p>
+    <p>State:<?php echo $resb['birth_place'];?></p>
     </div>
 <div class="col-md-6">
     <p>City:</p>
@@ -202,16 +214,16 @@
 <div class="row">
 <div class="col-md-6">
 
-    <p>Education:</p>
+    <p>Education:<?php echo $resb['education'];?></p>
     <p>College/Institution:</p>
     <p>Education in Detail:</p>
-    <p>Employed in:</p>
+    <p>Employed in:<?php echo $resb['employed_in'];?></p>
 
     </div>
     <div class="col-md-6">
-      <p>Occupation:</p>
+      <p>Occupation:<?php echo $resb['occupation'];?></p>
       <p>Occupation in Detail:</p>
-      <p>Annual Income:</p>
+      <p>Annual Income:<?php echo $resb['income'];?></p>
     </div>
 </div>
 </div>
@@ -231,24 +243,28 @@
 <div class="row">
 <div class="col-md-6">
 
-<p>Family Values:</p>
-<p>Family Type:</p>
-<p>Family Status:</p>
+<p>Family Values:<?php echo $resb['family_values'];?></p>
+<p>Family Type:<?php echo $resb['family_type'];?></p>
+<p>Family Status:<?php echo $resb['family_status'];?></p>
 <p>Ancestral/Family origin:</p>
-<p>Family Location:</p>
+<p>Family Location:<?php echo $resb['parents_location'];?></p>
 </div>
 <div class="col-md-6">
 
-    <p>Father Status:</p>
-    <p>Mother Status:</p>
-    <p>No. of Brothers:</p>
-    <p>No. of Sisters:</p>
+    <p>Father Status:<?php echo $resb['father_status'];?></p>
+    <p>Mother Status:<?php echo $resb['mother_status'];?></p>
+    <p>No. of Brothers:<?php echo $resb['brother_status'];?></p>
+    <p>No. of Sisters:<?php echo $resb['sister_status'];?></p>
     </div>
 </div>
 </div>
 
+
 					</div>
-				</div>
+                </div>
+                <?php
+}
+?>
 				
 				   <div class="terms terms-hr-size">
             <h5>Partner Preference</h5>
@@ -267,22 +283,25 @@
                     </div>
                   <hr style="width: 100%;">
     <div class="row">
+    <?php 
+while($res=mysqli_fetch_assoc($result)){
+?>
     <div class="col-md-6">
 
-        <p>Groom's Age:</p>
-        <p>Height:</p>
-        <p>Martial Status:</p>
-        <p>Physical Status:</p>
-        <p>Eating Habits:</p>
-        <p>Smoking Habits:</p>
+        <p>Groom's Age:<?php echo $res['partner_age']; ?></p>
+        <p>Height:<?php echo $res['partner_height']; ?></p>
+        <p>Martial Status:<?php echo $res['partner_martial_status']; ?></p>
+        <p>Physical Status:<?php echo $res['partner_physical_status']; ?></p>
+        <p>Eating Habits:<?php echo $res['partner_eating_habits']; ?></p>
+        <p>Smoking Habits:<?php echo $res['partner_smoking_habits']; ?></p>
         </div>
         <div class="col-md-6">
-        <p>Drinking Habits:</p>
-        <p>Religion:</p>
-        <p>Mother Tongue:</p>
-        <p>Caste:</p>
-        <p>Star:</p>
-        <p>Manglik:</p>
+        <p>Drinking Habits:<?php echo $res['partner_drinking_habits']; ?></p>
+        <p>Religion:<?php echo $res['partner_religion']; ?></p>
+        <p>Mother Tongue:<?php echo $res['partner_mother_tongue']; ?></p>
+        <p>Caste:<?php echo $res['partner_select_caste']; ?></p>
+        <p>Star:<?php echo $res['partner_star']; ?></p>
+        <p>Manglik:<?php echo $res['partner_manglik']; ?></p>
     </div>
     </div>
 
@@ -302,11 +321,11 @@
   <div class="row">
   <div class="col-md-6">
 
-      <p>Education:</p>
-      <p>Occupation:</p>
+      <p>Education:<?php echo $res['partner_education']; ?></p>
+      <p>Occupation:<?php echo $res['partner_occupation']; ?></p>
   </div>
   <div class="col-md-6">
-      <p>Annual Income:</p>
+      <p>Annual Income:<?php echo $res['partner_annual_income']; ?></p>
 
   </div>
   </div>
@@ -327,14 +346,14 @@
   <div class="row">
   <div class="col-md-6">
 
-      <p>Country:</p>
+      <p>Country:<?php echo $res['partner_country']; ?></p>
       <p>Residing State:</p>
 
   </div>
   <div class="col-md-6">
 
 
-      <p>Citizenship:</p>
+      <p>Citizenship:<?php echo $res['partner_citizenship']; ?></p>
       <p>Residing City:</p>
   </div>
   </div>
@@ -353,9 +372,11 @@
                   </div>
                   </div>
                   <hr style="width: 100%;">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pretium dictum diam vel laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dictum justo nec lacus porta congue. Phasellus convallis ut urna a lobortis. Vestibulum bibendum quam ligula, ac fringilla mi efficitur sed. Curabitur non augue enim. Sed efficitur semper elit, eget gravida est scelerisque ut. Curabitur non ex lobortis ligula auctor dignissim vel in est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam vel rutrum tellus, vitae hendrerit libero. Morbi posuere augue at egestas cursus. Curabitur ut leo malesuada nibh facilisis semper vel non justo.</p>
+                  <p><?php echo $res['about_partner']; ?></p>
               </div>
-
+            <?php
+                }
+            ?>
             </div>
           </div>
 
