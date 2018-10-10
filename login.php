@@ -4,7 +4,7 @@ include_once("config.php");
 session_start();
 	if(isset($_SESSION["uid"]))
 	{
-
+		
 	}
 
 		$errstatus=0;
@@ -122,7 +122,7 @@ session_start();
 		<div class="col-md-12 col-sm-12 col-xs-12 login padd0">
 			<div class="col-md-6 col-sm-6 col-xs-12 bor">
 				<img class="img-responsive" src="images/logo.png" alt="logo" title="logo" />
-				<div class="donot">Don't have an account? <a href="register.php">Create your account</a>
+				<div class="donot">Don't have an account? <a href="registeration.php">Create your account</a>
 				</div>
 				<p>It takes less than a minute</p>
 
@@ -182,7 +182,7 @@ session_start();
 					<li><a href="all_ads.html">All Ads</a></li>
                     <li><a href="login.php">Login</a></li>
 					<li><a href="contactus.html">Help & Contact us</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <li><a href="registeration.php">Register</a></li>
                     <li><a href="terms_and_conditions.html">Terms & Conditions</a></li>
                 </ul>
             </div>
