@@ -1,4 +1,4 @@
-<form id="insert_form" method="post" name="insert_form">
+<form action="" method="post">
     <!--#add_data_modal basic info-->
     <div id="add_data_Modal" class="modal fade">
       <div class="modal-dialog">
@@ -10,7 +10,7 @@
           <div class="modal-body">
 		  
 		  
-            <form method="post" id="insert_form">
+            
               <div class="col-md-6 form_input">
                 <label>Age</label>
                 <input type="text" value=" <?php echo $resb['user_age']; ?> " name="user_age" class="form-control"> <br>
@@ -102,7 +102,7 @@
               </div>
             
 
-              <input type="submit" name="submit" id="insert" value="update" class="btn btn-success" />
+              <input type="submit" name="submit" id="insert" value="update" class="btn btn-success" >
 
 			
           </div>
@@ -111,7 +111,6 @@
           </div>
         </div>
       </div>
-	 
     </div>
 	
 	
@@ -124,14 +123,14 @@
 						<h4 class="modal-title">Location</h4>
 				 </div>
 				 <div class="modal-body">
-						<form method="post" id="insert_form">
+					
 							
  <div class="col-md-12 form_input">
  <label>Location</label>
 	<input type="text"  value=" <?php echo $resb['birth_place']; ?> " name="place_of_birth" class="form-control" ><br>
  </div>
  <input type="submit" name="submit" id="insert" value="Update" class="btn btn-success" />
-						</form>
+						
 				 </div>
 				 <div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -152,11 +151,8 @@
 							<label>Enter Religion</label>
 							<div class="form-group">
 								<select class="selectpicker form-control bs-select-hidden" name="Religion">
-									<option value="">
-										Select Religion
-									</option>
-									<option value="Hindu">
-										Hindu
+									<option value="">Select Religion</option>
+									<option value="Hindu">Hindu
 									</option>
 									<option value="Muslim - Shia">
 										Muslim - Shia
@@ -722,7 +718,12 @@
 									10
 								</option>
 							</select><br>
-						</div><input class="btn btn-success" id="insert" name="insert" type="submit" value="Update">
+						</div>
+						<div class="col-md-12 form_input">
+<label>Ancestral/Family origin:</label> 
+<input class="form-control" value="<?php echo $resb['family_origin']; ?>" name="family_origin" type="text"><br>
+</div>
+						<input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">
 				
 				</div>
 				<div class="modal-footer">
@@ -742,332 +743,216 @@
 				<div class="modal-body">
 					
 						<div class="col-md-6 form_input">
-							<label>Groom's Age</label> <select class="selectpicker form-control" name="partner_age">
-								<option value="Select Age">
-									Select Age
-								</option>
-								<option value="18-22">
+							<label>Age</label> <select class="selectpicker form-control" name="partner_age">
+								<option value="Select Age">Select Age</option>
+								<option value="18-22" <?php if ($resb["partner_age"]=='18-22'){echo "selected";}?>>
 									18-22
 								</option>
-								<option value="23-27">
+								<option value="23-27" <?php if($resb["partner_age"]=='23-27'){echo "selected";}?>>
 									23-27
 								</option>
-								<option value="28-32">
+								<option value="28-32" <?php if($resb["partner_age"]=='28-32'){echo "selected";}?>>
 									28-32
 								</option>
-								<option value="33-37">
+								<option value="33-37" <?php if($resb["partner_age"]=='33-37'){echo "selected";}?>>
 									33-37
 								</option>
-								<option value="38-42">
+								<option value="38-42" <?php if($resb["partner_age"]=='38-42'){echo "selected";}?>>
 									38-42
 								</option>
-								<option value="43-47">
+								<option value="43-47" <?php if($resb["partner_age"]=='43-47'){echo "selected";}?>>
 									43-47
 								</option>
 							</select>
 						</div><br>
 						<div class="col-md-6 form_input">
-							<label>Drinking Habits</label> <select class="selectpicker form-control" name="drinking_habits">
-								<option value="Select Drinking Habits">
-									Select Drinking Habits
-								</option>
-								<option value="Doesn't Matter">
-									Doesn't Matter
-								</option>
-								<option value="Never Drinks">
-									Never Drinks
-								</option>
-								<option value="Drinks Socially">
-									Drinks Socially
-								</option>
-								<option value="Drinks Regularly">
-									Drinks Regularly
-								</option>
-							</select>
-						</div><br>
-						<div class="col-md-6 form_input">
 							<label>Enter Height</label> <select class="selectpicker form-control" name="partner_height">
-								<option value="Select Height">
-									Select Height
-								</option>
-								<option value="4ft 0in/121.92cm - 4ft 5in/134.62cm">
-									4ft 0in/121.92cm - 4ft 5in/134.62cm
-								</option>
-								<option value="4ft 6in/137.16cm - 4ft 11in/149.86cm">
-									4ft 6in/137.16cm - 4ft 11in/149.86cm
-								</option>
-								<option value="5ft 0in/152.40cm - 5ft 5in/165.10cm">
-									5ft 0in/152.40cm - 5ft 5in/165.10cm
-								</option>
-								<option value="5ft 6in/167.64cm - 5ft 11in/180.34cm">
-									5ft 6in/167.64cm - 5ft 11in/180.34cm
-								</option>
-								<option value="6ft 0in/182.88cm - 6ft 5in/195.58cm">
-									6ft 0in/182.88cm - 6ft 5in/195.58cm
-								</option>
-								<option value="6ft 6in/198.12cm - 6ft 8in/203.20cm">
-									6ft 6in/198.12cm - 6ft 8in/203.20cm
-								</option>
+							<option value="Select Height">Select Height</option>
+							<option value="4ft 0in/121.92cm - 4ft 5in/134.62cm" <?php if($resb["partner_height"]=='4ft 0in/121.92cm - 4ft 5in/134.62cm'){echo "selected";}?>>4ft 0in/121.92cm - 4ft 5in/134.62cm</option>
+							<option value="4ft 6in/137.16cm - 4ft 11in/149.86cm" <?php if($resb["partner_height"]=='4ft 6in/137.16cm - 4ft 11in/149.86cm'){echo "selected";}?>>4ft 6in/137.16cm - 4ft 11in/149.86cm</option>
+							<option value="5ft 0in/152.40cm - 5ft 5in/165.10cm" <?php if($resb["partner_height"]=='5ft 0in/152.40cm - 5ft 5in/165.10cm'){echo "selected";}?>>5ft 0in/152.40cm - 5ft 5in/165.10cm</option>
+							<option value="5ft 6in/167.64cm - 5ft 11in/180.34cm" <?php if($resb["partner_height"]=='5ft 6in/167.64cm - 5ft 11in/180.34cm'){echo "selected";}?>>5ft 6in/167.64cm - 5ft 11in/180.34cm</option>
+							<option value="6ft 0in/182.88cm - 6ft 5in/195.58cm" <?php if($resb["partner_height"]=='6ft 0in/182.88cm - 6ft 5in/195.58cm'){echo "selected";}?>>6ft 0in/182.88cm - 6ft 5in/195.58cm</option>
+							<option value="6ft 6in/198.12cm - 6ft 8in/203.20cm" <?php if($resb["partner_height"]=='6ft 6in/198.12cm - 6ft 8in/203.20cm'){echo "selected";}?>>6ft 6in/198.12cm - 6ft 8in/203.20cm</option>
 							</select>
 						</div><br>
 						<div class="col-md-6 form_input">
-							<label>Enter Religion</label> <select class="selectpicker form-control" name="partner_religion">
-								<option value="Select Religion">
-									Select Religion
-								</option>
-								<option value="Hindu">
-									Hindu
-								</option>
-								<option value="Muslim">
-									Muslim
-								</option>
-								<option value="Christain">
-									Christain
-								</option>
-								<option value="Sikh">
-									Sikh
-								</option>
-								<option value="Zoroastrianism">
-									Zoroastrianism
-								</option>
-								<option value="Buddhism">
-									Buddhism
-								</option>
-							</select>
+							<label>Enter Martial Status</label><br> 
+							<input type="radio"  id="radio33" name="Z" value="Married" <?php if($resb["partner_martial_status"]=='Married'){echo "checked";}?>><label for="radio33">Married</label>
+							<input type="radio"  id="radio34" name="Z" value="Unmarried" <?php if($resb["partner_martial_status"]=='Unmarried'){echo "checked";}?>><label for="radio34">Unmarried</label>
+							<input type="radio"  id="radio35" name="Z" value="Widow/Widower" <?php if($resb["partner_martial_status"]=='Widow/Widower'){echo "checked";}?>><label for="radio35">Widow/Widower</label>
+							<input type="radio"  id="radio36" name="Z" value="Divorced" <?php if($resb["partner_martial_status"]=='Divorced'){echo "checked";}?>><label for="radio36">Divorced</label>
+							<input type="radio"  id="radio37" name="Z" value="Awaiting Divorce" <?php if($resb["partner_martial_status"]=='Awaiting Divorce'){echo "checked";}?>><label for="radio37">Awaiting Divorce</label>
 						</div><br>
 						<div class="col-md-6 form_input">
-							<label>Enter Martial Status</label> <select class="selectpicker form-control" name="partner_martial_status">
-								<option value="Select Martial status">
-									Select martial status
-								</option>
-								<option value="Married">
-									Married
-								</option>
-								<option value="Divorced">
-									Divorced
-								</option>
-								<option value="Widow/Widower">
-									Widow/Widower
-								</option>
-								<option value="Awaiting Divorce">
-									Awaiting Divorce
-								</option>
-							</select>
+							<label>Enter Physical Status</label><br> 
+							<input type="radio" id="radio38" name="Y" value="Normal" <?php if($resb["partner_physical_status"]=='Normal'){echo "checked";}?>><label for="radio38">Normal</label>
+							<input type="radio" id="radio39" name="Y" value="Physically Challenged"<?php if($resb["partner_physical_status"]=='Physically Challenged'){echo "checked";}?>><label for="radio39">Physically Challenged</label>
+							<input type="radio" id="radio40" name="Y" value="Does not Matter" <?php if($resb["partner_physical_status"]=='Does not Matter'){echo "checked";}?>><label for="radio40">Does not Matter</label>
 						</div><br>
 						<div class="col-md-6 form_input">
-							<label>Enter Mother Tongue</label> <select class="selectpicker form-control" name="partner_mothertongue">
-								<option value="Select Mother Tongue">
-									Select Mother Tongue
-								</option>
-								<option value="English">
-									English
-								</option>
-								<option value="Marathi">
-									Marathi
-								</option>
-								<option value="Hindi">
-									Hindi
-								</option>
-								<option value="Bengali">
-									Bengali
-								</option>
-								<option value="Punjabi">
-									Punjabi
-								</option>
-								<option value="Kannada">
-									Kannada
-								</option>
-								<option value="Tulu">
-									Tulu
-								</option>
-								<option value="Tamil">
-									Tamil
-								</option>
-								<option value="Telugu">
-									Telugu
-								</option>
-							</select>
+							<label>Enter Eating Habits</label><br> 
+							<input type="radio" id="radio41" name="X" value="Vegetarian" <?php if($resb["partner_eating_habits"]=='Vegetarian'){echo "checked";}?>><label for="radio41">Vegetarian</label>
+							<input type="radio" id="radio42" name="X" value="Non-Vegetarian" <?php if($resb["partner_eating_habits"]=='Non-Vegetarian'){echo "checked";}?>><label for="radio42">Non-Vegetarian</label>
+							<input type="radio" id="radio43" name="X" value="Eggetarian" <?php if($resb["partner_eating_habits"]=='Eggetarian'){echo "checked";}?>><label for="radio43">Eggetarian</label>
+							<input type="radio" id="radio44" name="X" value="Does not Matter" <?php if($resb["partner_eating_habits"]=='Does not Matter'){echo "checked";}?>><label for="radio44">Does not Matter</label>
 						</div><br>
 						<div class="col-md-6 form_input">
-							<label>Enter Physical Status</label> <select class="selectpicker form-control" name="partner_physicalstatus">
-								<option value="Select Physical Status">
-									Select Physical Status
-								</option>
-								<option value="Normal">
-									Normal
-								</option>
-								<option value="Physically Challenged">
-									Physically Challenged
-								</option>
-								<option value="Doesn't Matter">
-									Doesn't Matter
-								</option>
-							</select>
+							<label>Drinking Habits</label><br> 
+							<input type="radio" id="radio45" name="W" value="Does not Matter"  <?php if($resb["partner_drinking_habits"]=='Does not Matter'){echo "checked";}?>><label for="radio45">Does not Matter</label>
+                            <input type="radio" id="radio46" name="W" value="Never Drinks" <?php if($resb["partner_drinking_habits"]=='Never Drinks'){echo "checked";}?>><label for="radio46">Never Drinks</label>
+                            <input type="radio" id="radio47" name="W" value="Drinks Socially" <?php if($resb["partner_drinking_habits"]=='Drinks Socially'){echo "checked";}?>><label for="radio47">Drinks Socially</label>
+                            <input type="radio" id="radio48" name="W" value="Drinks Regularly" <?php if($resb["partner_drinking_habits"]=='Drinks Regularly'){echo "checked";}?>><label for="radio48">Drinks Regularly</label>
 						</div><br>
+						<div class="col-md-6 form_input">
+							<label>Enter Smoking Habits</label> 
+							<input type="radio" id="radio49" name="V" value="Does not Matter"<?php if($resb["partner_smoking_habits"]=='Does not Matter'){echo "checked";}?>><label for="radio49">Does not Matter</label>
+							<input type="radio" id="radio50" name="V" value="Never Smokes" <?php if($resb["partner_smoking_habits"]=='Never Smokes'){echo "checked";}?>><label for="radio50">Never Smokes</label>
+							<input type="radio" id="radio51" name="V" value="Smokes Occasionally" <?php if($resb["partner_smoking_habits"]=='Smokes Occasionally'){echo "checked";}?>><label for="radio51">Smokes Occasionally</label>
+							<input type="radio" id="radio52" name="V" value="Smokes Regularly" <?php if($resb["partner_smoking_habits"]=='Smokes Regularly'){echo "checked";}?>><label for="radio52">Smokes Regularly</label>
+						</div><br>
+					
+						<div class="col-md-6 form_input">
+							<label>Enter Mother Tongue</label> 
+							<select class="selectpicker form-control" name="partner_mothertongue">
+							<option value="Select Mother Tongue">Select Mother Tongue</option>
+							<option value="English"<?php if($resb["partner_mother_tongue"]=='English'){echo "selected";}?>>English</option>
+							<option value="Marathi" <?php if($resb["partner_mother_tongue"]=='Marathi'){echo "selected";}?>>Marathi</option>
+							<option value="Hindi" <?php if($resb["partner_mother_tongue"]=='Hindi'){echo "selected";}?>>Hindi</option>
+							<option value="Bengali" <?php if($resb["partner_mother_tongue"]=='Bengali'){echo "selected";}?>>Bengali</option>
+							<option value="Punjabi" <?php if($resb["partner_mother_tongue"]=='Punjabi'){echo "selected";}?>>Punjabi</option>
+							<option value="Kannada" <?php if($resb["partner_mother_tongue"]=='Kannada'){echo "selected";}?>>Kannada</option>
+							<option value="Tulu" <?php if($resb["partner_mother_tongue"]=='Tulu'){echo "selected";}?>>Tulu</option>
+							<option value="Tamil" <?php if($resb["partner_mother_tongue"]=='Tamil'){echo "selected";}?>>Tamil</option>
+							<option value="Telugu" <?php if($resb["partner_mother_tongue"]=='Telugu'){echo "selected";}?>>Telugu</option>
+						</select>
+						</div><br>
+						
 						<div class="col-md-6 form_input">
 							<label>Enter Caste</label> <select class="selectpicker form-control" name="partner_caste">
 								<option value="Select Caste">
 									Select Caste
 								</option>
-								<option value="Teli">
+								<option value="Teli" <?php if($resb["partner_select_caste"]=='Teli'){echo "selected";}?>>
 									Teli
 								</option>
-								<option value="obc">
+								<option value="obc" <?php if($resb["partner_select_caste"]=='obc'){echo "selected";}?>>
 									obc
 								</option>
-								<option value="sc/st">
+								<option value="sc/st" <?php if($resb["partner_select_caste"]=='sc/st'){echo "selected";}?>>
 									sc/st
 								</option>
 							</select>
 						</div><br>
-						<div class="col-md-6 form_input">
-							<label>Enter Eating Habits</label> <select class="selectpicker form-control" name="partner_eatinghabits">
-								<option value="Select Eating Habits">
-									Select Eating Habits
-								</option>
-								<option value="Vegetarian">
-									Vegetarian
-								</option>
-								<option value="Non-Vegetarian">
-									Non-Vegetarian
-								</option>
-								<option value="Doesn't Matter">
-									Doesn't Matter
-								</option>
-							</select>
-						</div><br>
+						
 						<div class="col-md-6 form_input">
 							<label>Enter Star</label> <select class="selectpicker form-control" name="partner_star">
 								<option value="Select Star">
 									Select Star
 								</option>
-								<option value="Ashwini">
+								<option value="Ashwini" <?php if($resb["partner_star"]=='Ashwini'){echo "selected";}?>>
 									Ashwini
 								</option>
-								<option value="Bharani">
+								<option value="Bharani" <?php if($resb["partner_star"]=='Bharani'){echo "selected";}?>>
 									Bharani
 								</option>
-								<option value="Krittika">
+								<option value="Krittika" <?php if($resb["partner_star"]=='Krittika'){echo "selected";}?>>
 									Krittika
 								</option>
-								<option value="Rohini">
+								<option value="Rohini" <?php if($resb["partner_star"]=='Rohini'){echo "selected";}?>>
 									Rohini
 								</option>
-								<option value="Mrigashira">
+								<option value="Mrigashira" <?php if($resb["partner_star"]=='Mrigashira'){echo "selected";}?>>
 									Mrigashira
 								</option>
-								<option value="Ardra">
+								<option value="Ardra" <?php if($resb["partner_star"]=='Ardra'){echo "selected";}?>>
 									Ardra
 								</option>
-								<option value="Punarvasu">
+								<option value="Punarvasu" <?php if($resb["partner_star"]=='Punarvasu'){echo "selected";}?>>
 									Punarvasu
 								</option>
-								<option value="Pushya">
+								<option value="Pushya" <?php if($resb["partner_star"]=='Pushya'){echo "selected";}?>>
 									Pushya
 								</option>
-								<option value="Ashlesha">
+								<option value="Ashlesha" <?php if($resb["partner_star"]=='Ashlesha'){echo "selected";}?>>
 									Ashlesha
 								</option>
-								<option value="Magha">
+								<option value="Magha" <?php if($resb["partner_star"]=='Magha'){echo "selected";}?>>
 									Magha
 								</option>
-								<option value="Purva Phalguni">
+								<option value="Purva Phalguni" <?php if($resb["partner_star"]=='Purva Phalguni'){echo "selected";}?>>
 									Purva Phalguni
 								</option>
-								<option value="Uttara Phalguni">
+								<option value="Uttara Phalguni" <?php if($resb["partner_star"]=='Uttara Phalguni'){echo "selected";}?>>
 									Uttara Phalguni
 								</option>
-								<option value="Hasta">
+								<option value="Hasta" <?php if($resb["partner_star"]=='Hasta'){echo "selected";}?>>
 									Hasta
 								</option>
-								<option value="Chitra">
+								<option value="Chitra" <?php if($resb["partner_star"]=='Chitra'){echo "selected";}?>>
 									Chitra
 								</option>
-								<option value="Swati">
+								<option value="Swati" <?php if($resb["partner_star"]=='Swati'){echo "selected";}?>>
 									Swati
 								</option>
-								<option value="Vishakha">
+								<option value="Vishakha" <?php if($resb["partner_star"]=='Vishakha'){echo "selected";}?>>
 									Vishakha
 								</option>
-								<option value="Anuradha">
+								<option value="Anuradha" <?php if($resb["partner_star"]=='Anuradha'){echo "selected";}?>>
 									Anuradha
 								</option>
-								<option value="Jyeshtha">
+								<option value="Jyeshtha" <?php if($resb["partner_star"]=='Jyeshtha'){echo "selected";}?>>
 									Jyeshtha
 								</option>
-								<option value="Mula">
+								<option value="Mula" <?php if($resb["partner_star"]=='Mula '){echo "selected";}?>>
 									Mula
 								</option>
-								<option value="Purva Ashadha">
+								<option value="Purva Ashadha" <?php if($resb["partner_star"]=='Purva Ashadha'){echo "selected";}?>>
 									Purva Ashadha
 								</option>
-								<option value="Uttara Ashadha">
+								<option value="Uttara Ashadha" <?php if($resb["partner_star"]=='Uttara Ashadha'){echo "selected";}?>>
 									Uttara Ashadha
 								</option>
-								<option value="Shravana">
+								<option value="Shravana" <?php if($resb["partner_star"]=='Shravana'){echo "selected";}?>>
 									Shravana
 								</option>
-								<option value="Dhanishta">
+								<option value="Dhanishta" <?php if($resb["partner_star"]=='Dhanishta'){echo "selected";}?>>
 									Dhanishta
 								</option>
-								<option value="ShataBhisha">
+								<option value="ShataBhisha" <?php if($resb["partner_star"]=='ShataBhisha'){echo "selected";}?>>
 									ShataBhisha
 								</option>
-								<option value="Purva Bhadrapada">
+								<option value="Purva Bhadrapada" <?php if($resb["partner_star"]=='Purva Bhadrapada'){echo "selected";}?>>
 									Purva Bhadrapada
 								</option>
-								<option value="Uttara Bhadrapada">
+								<option value="Uttara Bhadrapada" <?php if($resb["partner_star"]=='Uttara Bhadrapada'){echo "selected";}?>>
 									Uttara Bhadrapada
 								</option>
-								<option value="Revati">
+								<option value="Revati" <?php if($resb["partner_star"]=='Revati'){echo "selected";}?>>
 									Revati
 								</option>
 							</select>
 						</div><br>
-						<div class="col-md-6 form_input">
-							<label>Enter Smoking Habits</label> <select class="selectpicker form-control" name="partner_star">
-								<option value="Select Smoking Habits">
-									Select Smoking Habits
-								</option>
-								<option value="Doesn't Matter">
-									Doesn't Matter
-								</option>
-								<option value="Never Smokes">
-									Never Smokes
-								</option>
-								<option value="Smokes Socially">
-									Smokes Socially
-								</option>
-								<option value="Smokes Regularly">
-									Smokes Regularly
-								</option>
-							</select>
-						</div><br>
+						
 						<div class="col-md-6 form_input">
 							<label>Manglik</label>
 							<div class="form-group">
-								<select class="selectpicker form-control" name="manglik">
-									<option value="Select Manglik Status">
-										-Select Manglik Status-
-									</option>
-									<option value="Yes">
-										Yes
-									</option>
-									<option value="No">
-										No
-									</option>
-								</select>
+							<input type="radio" id="radio53" name="U" value="Yes" <?php if($resb["partner_manglik"]=='Yes'){echo "checked";}?>><label for="radio53">Yes</label>
+							<input type="radio" id="radio54" name="U" value="No" <?php if($resb["partner_manglik"]=='No'){echo "checked";}?>><label for="radio54">No</label>
+							<input type="radio" id="radio55" name="U" value="Does not Matter" <?php if($resb["partner_manglik"]=='Does not Matter'){echo "checked";}?>><label for="radio55">Does not Matter</label>
 							</div>
-						</div><br>
-						<input class="btn btn-success" id="insert" name="insert" type="submit" value="Update">
-				
+						</div><br>	
+						<input type="submit" name="submit" id="insert" value="Update" class="btn btn-success" />
+
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
 				</div>
 			</div>
 		</div>
-	</div><!--partners Basic Details modal end-->
+	</div>
+	
+	<!--partners Basic Details modal end-->
 	
 		
 	<!--partners Professional Preferences-->
@@ -1080,29 +965,29 @@
 				<div class="modal-body">
 					
 						<div class="col-md-12 form_input">
-							<label>Groom's Education</label> <select class="selectpicker form-control" name="partner_education">
+							<label> Education</label> <select class="selectpicker form-control" name="partner_education">
 								<option value="Select Education">
 									Select Education
 								</option>
-								<option value="Accounting (BS, BA)">
+								<option value="Accounting (BS, BA)" <?php if($resb["partner_education"]=='Accounting (BS, BA)'){echo "selected";}?>>
 									Accounting (BS, BA)
 								</option>
-								<option value="Aerospace Studies (Air Force ROTC)">
+								<option value="Aerospace Studies (Air Force ROTC)" <?php if($resb["partner_education"]=='Aerospace Studies (Air Force ROTC)'){echo "selected";}?>>
 									Aerospace Studies (Air Force ROTC)
 								</option>
-								<option value="Agribusiness (BS)">
+								<option value="Agribusiness (BS)" <?php if($resb["partner_education"]=='Agribusiness (BS)'){echo "selected";}?> >
 									Agribusiness (BS)
 								</option>
-								<option value="Agricultural Communication and Journalism (BS)">
+								<option value="Agricultural Communication and Journalism (BS)" <?php if($resb["partner_education"]=='Agricultural Communication and Journalism (BS)'){echo "selected";}?>>
 									Agricultural Communication and Journalism (BS)
 								</option>
-								<option value="Agricultural Education (BS)">
+								<option value="Agricultural Education (BS)" <?php if($resb["partner_education"]=='Agricultural Education (BS)'){echo "selected";}?>>
 									Agricultural Education (BS)
 								</option>
-								<option value="Agricultural Machinery Technology Certificate (AAS, Cert)">
+								<option value="Agricultural Machinery Technology Certificate (AAS, Cert)" <?php if($resb["partner_education"]=='Agricultural Machinery Technology Certificate (AAS, Cert)'){echo "selected";}?>>
 									Agricultural Machinery Technology Certificate (AAS, Cert)
 								</option>
-								<option value="Agricultural Science (AS)">
+								<option value="Agricultural Science (AS)" <?php if($resb["partner_education"]=='Agricultural Science (AS)'){echo "selected";}?>>
 									Agricultural Science (AS)
 								</option>
 							</select><br>
@@ -1112,22 +997,22 @@
 								<option value="Select Income">
 									Select Income
 								</option>
-								<option value="90000 - 150000">
+								<option value="90000 - 150000" <?php if($resb["partner_annual_income"]='90000 - 150000'){echo "selected";}?>>
 									90000 - 150000
 								</option>
-								<option value="160000 - 220000">
+								<option value="160000 - 220000" <?php if($resb["partner_annual_income"]='160000 - 220000'){echo "selected";}?>>
 									160000 - 220000
 								</option>
-								<option value="230000 - 290000">
+								<option value="230000 - 290000" <?php if($resb["partner_annual_income"]='230000 - 290000'){echo "selected";}?>>
 									230000 - 290000
 								</option>
-								<option value="300000 - 360000">
+								<option value="300000 - 360000" <?php if($resb["partner_annual_income"]='300000 - 360000'){echo "selected";}?>>
 									300000 - 360000
 								</option>
-								<option value="370000 - 430000">
+								<option value="370000 - 430000" <?php if($resb["partner_annual_income"]='370000 - 430000'){echo "selected";}?>>
 									370000 - 430000
 								</option>
-								<option value="440000 - 500000">
+								<option value="440000 - 500000" <?php if($resb["partner_annual_income"]='440000 - 500000'){echo "selected";}?>>
 									440000 - 500000
 								</option>
 							</select><br>
@@ -1137,38 +1022,38 @@
 								<option value="Select Occupation">
 									Select Occupation
 								</option>
-								<option value="Chartered Administrators">
+								<option value="Chartered Administrators" <?php if($resb["partner_occupation"]=='Chartered Administrators'){echo "selected";}?>>
 									Chartered Administrators
 								</option>
-								<option value="Audiologists">
+								<option value="Audiologists" <?php if($resb["partner_occupation"]=='Audiologists'){echo "selected";}?>>
 									Audiologists
 								</option>
-								<option value="Certified Human Resources and Industrial Relations Counsellors">
+								<option value="Certified Human Resources and Industrial Relations Counsellors" <?php if($resb["partner_occupation"]=='Certified Human Resources and Industrial Relations Counsellors'){echo "selected";}?>>
 									Certified Human Resources and Industrial Relations Counsellors
 								</option>
-								<option value="Guidance Counsellors">
+								<option value="Guidance Counsellors" <?php if($resb["partner_occupation"]=='Guidance Counsellors'){echo "selected";}?>>
 									Guidance Counsellors
 								</option>
-								<option value="Criminologists">
+								<option value="Criminologists" <?php if($resb["partner_occupation"]=='Criminologists'){echo "selected";}?>>
 									Criminologists
 								</option>
-								<option value="Dieticians">
+								<option value="Dieticians" <?php if($resb["partner_occupation"]=='Dieticians'){echo "selected";}?>>
 									Dieticians
 								</option>
-								<option value="Occupational Therapists">
+								<option value="Occupational Therapists" <?php if($resb["partner_occupation"]=='Occupational Therapists'){echo "selected";}?>>
 									Occupational Therapists
 								</option>
-								<option value="Chartered Appraisers">
+								<option value="Chartered Appraisers" <?php if($resb["partner_occupation"]=='Chartered Appraisers'){echo "selected";}?>>
 									Chartered Appraisers
 								</option>
-								<option value="Dental Hygienists">
+								<option value="Dental Hygienists" <?php if($resb["partner_occupation"]=='Dental Hygienists'){echo "selected";}?>>
 									Dental Hygienists
 								</option>
-								<option value="Nursing Assistants">
+								<option value="Nursing Assistants" <?php if($resb["partner_occupation"]=='Nursing Assistants'){echo "selected";}?>>
 									Nursing Assistants
 								</option>
 							</select><br>
-						</div><input class="btn btn-success" id="insert" name="insert" type="submit" value="Update">
+						</div><input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">
 					
 				</div>
 				<div class="modal-footer">
@@ -1192,28 +1077,28 @@
 								<option value="Select Country">
 									Select Country
 								</option>
-								<option value="India">
+								<option value="India" <?php if($resb["partner_country"]=='India'){echo "selected";}?>>
 									India
 								</option>
-								<option value="Australia">
+								<option value="Australia" <?php if($resb["partner_country"]=='Australia'){echo "selected";}?>>
 									Australia
 								</option>
-								<option value="United States of America">
+								<option value="United States of America" <?php if($resb["partner_country"]=='unites States Of America'){echo "selected";}?>>
 									United States of America
 								</option>
-								<option value="England">
+								<option value="England" <?php if($resb["partner_country"]=='England'){echo "selected";}?>>
 									England
 								</option>
-								<option value="New Zealand">
+								<option value="New Zealand" <?php if($resb["partner_country"]=='New Zealand'){echo "selected";}?>>
 									New Zealand
 								</option>
-								<option value="United Arab Emirates">
+								<option value="United Arab Emirates" <?php if($resb["partner_country"]=='United Arab Emirates'){echo "selected";}?>>
 									United Arab Emirates
 								</option>
-								<option value="Russia">
+								<option value="Russia" <?php if($resb["partner_country"]=='Russia'){echo "selected";}?>>
 									Russia
 								</option>
-								<option value="Germany">
+								<option value="Germany" <?php if($resb["partner_country"]=='Germany'){echo "selected";}?>>
 									Germany
 								</option>
 							</select><br>
@@ -1223,19 +1108,19 @@
 								<option value="Select Citizenship">
 									Select Citizenship
 								</option>
-								<option value="Republic of India">
+								<option value="Republic of India" <?php if($resb["partner_citizenship"]=='Republic of India'){echo "selected";}?>>
 									Republic of India
 								</option>
-								<option value="Citizen Of USA">
+								<option value="Citizen Of USA" <?php if($resb["partner_citizenship"]=='Citizen of USA'){echo "selected";}?>>
 									Citizen Of USA
 								</option>
-								<option value="Australian Citizenship">
+								<option value="Australian Citizenship" <?php if($resb["partner_citizenship"]=='Australian Citizenship'){echo "selected";}?>>
 									Australian Citizenship
 								</option>
-								<option value="British Citizen">
+								<option value="British Citizen" <?php if($resb["partner_citizenship"]=='British Citizen'){echo "selected";}?>>
 									British Citizen
 								</option>
-								<option value="New Zealand Citizenship">
+								<option value="New Zealand Citizenship" <?php if($resb["partner_citizenship"]=='New Zealand Citizenship'){echo "selected";}?>>
 									New Zealand Citizenship
 								</option>
 							</select><br>
@@ -1245,7 +1130,7 @@
 						</div>
 						<div class="col-md-6 form_input">
 							<label>Residing City</label> <input class="form-control" name="residing_city" type="text"><br>
-						</div><input class="btn btn-success" id="insert" name="insert" type="submit" value="Update">
+						</div><input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">
 					
 				</div>
 				<div class="modal-footer">
@@ -1265,13 +1150,15 @@
 				<div class="modal-body">
 					
 						<label>Description Of Partner</label> 
-						<textarea class="form-control"></textarea> <input class="btn btn-success" id="insert" name="insert" type="submit" value="Update">
+						<textarea class="form-control" value="<?php echo $resb["about_partner"]?>"></textarea> 
+						<input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">
 					
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div><!--partners What We Are Looking For-->
-	</form>
+	
