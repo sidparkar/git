@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form id="insert_form" method="post" name="insert_form" enctype="multipart/form-data">
     <!--#add_data_modal basic info-->
     <div id="add_data_Modal" class="modal fade">
       <div class="modal-dialog">
@@ -10,7 +10,7 @@
           <div class="modal-body">
 		  
 		  
-            
+          
               <div class="col-md-6 form_input">
                 <label>Age</label>
                 <input type="text" value=" <?php echo $resb['user_age']; ?> " name="user_age" class="form-control"> <br>
@@ -102,7 +102,7 @@
               </div>
             
 
-              <input type="submit" name="submit" id="insert" value="update" class="btn btn-success" >
+              <input type="submit" name="submit" id="insert" value="update" class="btn btn-success" />
 
 			
           </div>
@@ -111,6 +111,7 @@
           </div>
         </div>
       </div>
+	 
     </div>
 	
 	
@@ -123,7 +124,7 @@
 						<h4 class="modal-title">Location</h4>
 				 </div>
 				 <div class="modal-body">
-					
+						
 							
  <div class="col-md-12 form_input">
  <label>Location</label>
@@ -138,6 +139,8 @@
 				</div>
 		 </div>
 	</div>
+	
+	
 	<!--regional  modal of user-->
 		<div class="modal fade" id="religion_data_Modal">
 		<div class="modal-dialog">
@@ -146,356 +149,157 @@
 					<h4 class="modal-title">Religion Information</h4>
 				</div>
 				<div class="modal-body">
-					
-						<div class="col-md-6 form_input">
-							<label>Enter Religion</label>
-							<div class="form-group">
-								<select class="selectpicker form-control bs-select-hidden" name="Religion">
-									<option value="">Select Religion</option>
-									<option value="Hindu">Hindu
-									</option>
-									<option value="Muslim - Shia">
-										Muslim - Shia
-									</option>
-									<option value="Muslim - Sunni">
-										Muslim - Sunni
-									</option>
-									<option value="Muslim - Others">
-										Muslim - Others
-									</option>
-									<option value="Christian - Catholic">
-										Christian - Catholic
-									</option>
-									<option value="Christian - Orthodox">
-										Christian - Orthodox
-									</option>
-									<option value="Christian - Protestant">
-										Christian - Protestant
-									</option>
-									<option value="Christian - Others">
-										Christian - Others
-									</option>
-									<option value="Sikh">
-										Sikh
-									</option>
-									<option value="Jain - Digambar">
-										Jain - Digambar
-									</option>
-									<option value="Jain - Shwetambar">
-										Jain - Shwetambar
-									</option>
-									<option value="Jain - Others">
-										Jain - Others
-									</option>
-									<option value="Parsi">
-										Parsi
-									</option>
-									<option value="Buddhist">
-										Buddhist
-									</option>
-									<option value="Inter-Religion">
-										Inter-Religion
-									</option>
-								</select>
-							</div>
-						</div><label>Minutes</label>
-						<div class="col-md-2 input-padding">
-							<select class="selectpicker form-control" name="birth_time">
-								<option value="1">
-									Hour
-								</option>
-								<option value="2">
-									0
-								</option>
-								<option value="3">
-									1
-								</option>
-								<option value="4">
-									2
-								</option>
-								<option value="5">
-									3
-								</option>
-								<option value="6">
-									4
-								</option>
-								<option value="7">
-									5
-								</option>
-								<option value="8">
-									6
-								</option>
-								<option value="9">
-									7
-								</option>
-								<option value="10">
-									8
-								</option>
-								<option value="11">
-									9
-								</option>
-								<option value="11">
-									10
-								</option>
-								<option value="11">
-									11
-								</option>
-								<option value="11">
-									12
-								</option>
-								<option value="11">
-									13
-								</option>
-								<option value="11">
-									14
-								</option>
-								<option value="11">
-									15
-								</option>
-								<option value="11">
-									16
-								</option>
-								<option value="11">
-									17
-								</option>
-								<option value="11">
-									18
-								</option>
-								<option value="11">
-									19
-								</option>
-								<option value="11">
-									20
-								</option>
-								<option value="11">
-									21
-								</option>
-								<option value="11">
-									22
-								</option>
-								<option value="11">
-									23
-								</option>
-							</select>
-						</div><label>Minutes</label>
-						<div class="col-md-2 input-padding">
-							<select class="selectpicker form-control" name="birth_minute">
-								<option value="1">
-									Minute
-								</option>
-								<option value="2">
-									0
-								</option>
-								<option value="3">
-									1
-								</option>
-								<option value="4">
-									2
-								</option>
-								<option value="5">
-									3
-								</option>
-								<option value="6">
-									4
-								</option>
-								<option value="7">
-									5
-								</option>
-								<option value="8">
-									6
-								</option>
-								<option value="9">
-									7
-								</option>
-								<option value="10">
-									8
-								</option>
-								<option value="11">
-									9
-								</option>
-								<option value="11">
-									10
-								</option>
-								<option value="11">
-									11
-								</option>
-								<option value="11">
-									12
-								</option>
-								<option value="11">
-									13
-								</option>
-								<option value="11">
-									14
-								</option>
-								<option value="11">
-									15
-								</option>
-								<option value="11">
-									16
-								</option>
-								<option value="11">
-									17
-								</option>
-								<option value="11">
-									18
-								</option>
-								<option value="11">
-									19
-								</option>
-								<option value="11">
-									20
-								</option>
-								<option value="11">
-									21
-								</option>
-								<option value="11">
-									22
-								</option>
-								<option value="11">
-									23
-								</option>
-							</select>
-						</div><label>birth period</label>
-						<div class="col-md-2 input-padding">
-							<select class="selectpicker form-control" name="birth_period">
-								<option value="AM">
-									AM
-								</option>
-								<option value="PM">
-									PM
-								</option>
-							</select>
-						</div>
+						
 						<div class="col-md-6 form_input">
 							<label>Caste</label> <select class="selectpicker form-control bs-select-hidden" name="caste">
-								<option value="Select Caste">
-									Select Caste
-								</option>
-								<option value="Teli">
+								
+								<option value="Teli"  <?php if($resb["caste"]=='Teli') { echo "selected";} ?>>
 									Teli
 								</option>
-								<option value="obc">
+								<option value="obc"  <?php if($resb["caste"]=='obc') { echo "selected";} ?>>
 									obc
 								</option>
-								<option value="sc/st">
+								<option value="sc/st"  <?php if($resb["caste"]=='sc/st') { echo "selected";} ?>>
 									sc/st
 								</option>
 							</select><br>
 						</div>
-						<div class="col-md-6 form_input">
-							<label>Place of Birth</label> <input class="form-control" name="place_of_birth" type="text"><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Gothram</label> <input class="form-control" name="gothram" type="text"><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Dosh</label> <input class="form-control" name="dosh" type="text"><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Star</label> <select class="selectpicker form-control" name="partner_star">
-								<option value="Select Star">
-									Select Star
+							<div class="col-md-6 form_input">
+							<label>Sub-Caste</label> 
+							<select class="selectpicker form-control bs-select-hidden" name="sub-caste">
+								
+								<option value="Teli" <?php if($resb["sub_caste"]=='Teli') { echo "selected";} ?>>
+									Teli
 								</option>
-								<option value="Ashwini">
+								<option value="obc" <?php if($resb["sub_caste"]=='obc') { echo "selected";} ?>>
+									obc
+								</option>
+								<option value="sc/st" <?php if($resb["sub_caste"]=='sc/st') { echo "selected";} ?>>
+									sc/st
+								</option>
+							</select>
+						</div>
+						<div class="col-md-6 form_input">
+							<label>Rashi</label> 
+							<select class="selectpicker form-control" name="rashi">
+							
+								<option value="Mesha - Aries"  <?php if($resb["rashi"]=='Mesha - Aries') { echo "selected";} ?>>Mesha - Aries</option>
+								<option value="Vrishabha - Taurus"  <?php if($resb["rashi"]=='Vrishabha - Taurus') { echo "selected";} ?>>Vrishabha - Taurus</option>
+								<option value="Mithuna - Gemini" <?php if($resb["rashi"]=='Mithuna - Gemini') { echo "selected";} ?>>Mithuna - Gemini</option>
+								<option value="Karka - Cancer" <?php if($resb["rashi"]=='Karka - Cancer') { echo "selected";} ?>>Karka - Cancer</option>
+								<option value="Simha - Leo" <?php if($resb["rashi"]=='Simha - Leo') { echo "selected";} ?>>Simha - Leo</option>
+								<option value="Kanya - Virgo" <?php if($resb["rashi"]=='Kanya - Virgo') { echo "selected";} ?>>Kanya - Virgo</option>
+								<option value="Tula - Libra" <?php if($resb["rashi"]=='Tula - Libra') { echo "selected";} ?>>Tula - Libra </option>
+								<option value="Vrishchika - Scorpio" <?php if($resb["rashi"]=='Vrishchika - Scorpio') { echo "selected";} ?>>Vrishchika - Scorpio</option>
+								<option value="Dhanu - Sagittarius" <?php if($resb["rashi"]=='Dhanu - Sagittarius') { echo "selected";} ?>>Dhanu - Sagittarius</option>
+								<option value="Makara - Capricorn" <?php if($resb["rashi"]=='Makara - Capricorn') { echo "selected";} ?>>Makara - Capricorn</option>
+								<option value="Kumbha - Aquarius" <?php if($resb["rashi"]=='Kumbha - Aquarius') { echo "selected";} ?>>Kumbha - Aquarius</option>
+								<option value="Meen - Pisces" <?php if($resb["rashi"]=='Meen - Pisces') { echo "selected";} ?>>Meen - Pisces</option>
+
+							</select>
+						</div>
+							
+						<div class="col-md-6 form_input">
+							<label>Star</label> <select class="selectpicker form-control" name="star">
+								
+								<option value="Ashwini" <?php if($resb["star"]=='Ashwini') { echo "selected";} ?>> 
 									Ashwini
 								</option>
-								<option value="Bharani">
+								<option value="Bharani" <?php if($resb["star"]=='Bharani') { echo "selected";} ?>>
 									Bharani
 								</option>
-								<option value="Krittika">
+								<option value="Krittika" <?php if($resb["star"]=='Krittika') { echo "selected";} ?>>
 									Krittika
 								</option>
-								<option value="Rohini">
+								<option value="Rohini" <?php if($resb["star"]=='Rohini') { echo "selected";} ?>>
 									Rohini
 								</option>
-								<option value="Mrigashira">
+								<option value="Mrigashira" <?php if($resb["star"]=='Mrigashira') { echo "selected";} ?>>
 									Mrigashira
 								</option>
-								<option value="Ardra">
+								<option value="Ardra" <?php if($resb["star"]=='Ardra') { echo "selected";} ?>>
 									Ardra
 								</option>
-								<option value="Punarvasu">
+								<option value="Punarvasu" <?php if($resb["star"]=='Punarvasu') { echo "selected";} ?>>
 									Punarvasu
 								</option>
-								<option value="Pushya">
+								<option value="Pushya" <?php if($resb["star"]=='Pushya') { echo "selected";} ?>>
 									Pushya
 								</option>
-								<option value="Ashlesha">
+								<option value="Ashlesha" <?php if($resb["star"]=='Ashlesha') { echo "selected";} ?>>
 									Ashlesha
 								</option>
-								<option value="Magha">
+								<option value="Magha" <?php if($resb["star"]=='Magha') { echo "selected";} ?>>
 									Magha
 								</option>
-								<option value="Purva Phalguni">
+								<option value="Purva Phalguni" <?php if($resb["star"]=='Purva Phalguni') { echo "selected";} ?>>
 									Purva Phalguni
 								</option>
-								<option value="Uttara Phalguni">
+								<option value="Uttara Phalguni" <?php if($resb["star"]=='Uttara Phalguni') { echo "selected";} ?>>
 									Uttara Phalguni
 								</option>
-								<option value="Hasta">
+								<option value="Hasta" <?php if($resb["star"]=='Hasta') { echo "selected";} ?>>
 									Hasta
 								</option>
-								<option value="Chitra">
+								<option value="Chitra" <?php if($resb["star"]=='Chitra') { echo "selected";} ?>>
 									Chitra
 								</option>
-								<option value="Swati">
+								<option value="Swati" <?php if($resb["star"]=='Swati') { echo "selected";} ?>>
 									Swati
 								</option>
-								<option value="Vishakha">
+								<option value="Vishakha" <?php if($resb["star"]=='Vishakha') { echo "selected";} ?>>
 									Vishakha
 								</option>
-								<option value="Anuradha">
+								<option value="Anuradha" <?php if($resb["star"]=='Anuradha') { echo "selected";} ?>>
 									Anuradha
-								</option>
-								<option value="Jyeshtha">
+								</option> 
+								<option value="Jyeshtha" <?php if($resb["star"]=='Jyeshtha') { echo "selected";} ?>>
 									Jyeshtha
 								</option>
-								<option value="Mula">
+								<option value="Mula" <?php if($resb["star"]=='Mula') { echo "selected";} ?>>
 									Mula
 								</option>
-								<option value="Purva Ashadha">
+								<option value="Purva Ashadha" <?php if($resb["star"]=='Purva Ashadha') { echo "selected";} ?>>
 									Purva Ashadha
 								</option>
-								<option value="Uttara Ashadha">
+								<option value="Uttara Ashadha" <?php if($resb["star"]=='Uttara Ashadha') { echo "selected";} ?>>
 									Uttara Ashadha
 								</option>
-								<option value="Shravana">
+								<option value="Shravana" <?php if($resb["star"]=='Shravana') { echo "selected";} ?>>
 									Shravana
 								</option>
-								<option value="Dhanishta">
+								<option value="Dhanishta" <?php if($resb["star"]=='Dhanishta') { echo "selected";} ?>>
 									Dhanishta
 								</option>
-								<option value="ShataBhisha">
+								<option value="ShataBhisha" <?php if($resb["star"]=='ShataBhisha') { echo "selected";} ?>>
 									ShataBhisha
 								</option>
-								<option value="Purva Bhadrapada">
+								<option value="Purva Bhadrapada" <?php if($resb["star"]=='Purva Bhadrapada') { echo "selected";} ?>>
 									Purva Bhadrapada
 								</option>
-								<option value="Uttara Bhadrapada">
+								<option value="Uttara Bhadrapada" <?php if($resb["star"]=='Uttara Bhadrapada') { echo "selected";} ?>>
 									Uttara Bhadrapada
 								</option>
-								<option value="Revati">
+								<option value="Revati" <?php if($resb["star"]=='Revati') { echo "selected";} ?>>
 									Revati
 								</option>
-							</select><br>
+							</select>
+						</div>
+						
+						<div class="col-md-6 form_input">
+							<label>Place of Birth</label> 
+							<input class="form-control"  value=" <?php echo $resb['user_age']; ?> " name = "place_of_birth" type="text">
 						</div>
 						<div class="col-md-6 form_input">
-							<label>Sub-Caste</label> <select class="selectpicker form-control bs-select-hidden" name="sub-caste">
-								<option value="Select Sub-Caste">
-									Select Sub-Caste
-								</option>
-								<option value="Teli">
-									Teli
-								</option>
-								<option value="obc">
-									obc
-								</option>
-								<option value="sc/st">
-									sc/st
-								</option>
-							</select><br>
-						</div><input class="btn btn-success" id="insert" name="Update" type="submit" value="Update">
+							<label>Manglik</label>  
+							 <div class="form-group">
+							 
+                              <input type="radio" id="A30" name="J" value="Yes" <?php if($resb["manglik"]=='Yes') { echo "checked";} ?>><label for="A30">Yes</label>
+                               <input type="radio" id="A31" name="J" value="No" <?php if($resb["manglik"]=='No') { echo "checked";} ?>><label for="A31">No</label>
+                               <input type="radio" id="A32" name="J" value="Does not Matter" <?php if($resb["manglik"]=='Doesnt Matter') { echo "checked";} ?>><label for="A32">Does not Matter</label>
+                                    </div>
+						</div>
+						   <input type="submit" name="submit" id="insert" value="update" class="btn btn-success" />
 				
 				</div>
 				<div class="modal-footer">
@@ -511,26 +315,61 @@
             <div class="modal-content">
              <div class="modal-header">
 
-                    <h4 class="modal-title">Professional Preferences</h4>
+                    <h4 class="modal-title">Professional Details</h4>
              </div>
              <div class="modal-body">
                   
-                        <div class="col-md-12 form_input">
+                        <div class="col-md-6 form_input">
 <label>Education</label>
-<input type="text" name="education" class="form-control" ><br>
+<select class="selectpicker form-control" name="education">
+<option value="Accounting (BS, BA)" <?php if($resb["education"]=='Accounting (BS, BA)') { echo "selected";}?>>Accounting (BS, BA)</option>
+ 
+<option value="Aerospace Studies (Air Force ROTC)"<?php if($resb["education"]=='Aerospace Studies (Air Force ROTC)') { echo "selected";}?>>Aerospace Studies (Air Force ROTC)</option>
+ <option value="Agribusiness (BS)"<?php if($resb["education"]=='Agribusiness (BS)') { echo "selected";}?>>Agribusiness (BS)</option>
+<option value="Agricultural Communication and Journalism (BS)"<?php if($resb["education"]=='Agricultural Communication and Journalism (BS)') { echo "selected";}?>>Agricultural Communication and Journalism (BS)</option>
+<option value="Agricultural Education (BS)"<?php if($resb["education"]=='Agricultural Education (BS)') { echo "selected";}?>>Agricultural Education (BS)</option>
+<option value="Agricultural Machinery Technology Certificate (AAS, Cert)"<?php if($resb["education"]=='Agricultural Machinery Technology Certificate (AAS, Cert)') { echo "selected";}?>>Agricultural Machinery Technology Certificate (AAS, Cert)</option>
+<option value="Agricultural Science (AS)"<?php if($resb["education"]=='Agricultural Science (AS)') { echo "selected";}?>>Agricultural Science (AS)</option>
+                    </select>
 </div>
-<div class="col-md-12 form_input">
+<div class="col-md-6 form_input">
 <label>Occupation</label>
-<input type="text" name="occupation" class="form-control" ><br>
+
+<select class="selectpicker form-control" name="occupation">
+   
+    <option value="Chartered Administrators" <?php if($resb["occupation"]=='Aerospace Studies (Air Force ROTC)') { echo "selected";}?>>Chartered Administrators</option>
+   <option value="Audiologists" <?php if($resb["occupation"]=='Audiologists') { echo "selected";}?>>Audiologists</option>
+  <option value="Certified Human Resources and Industrial Relations Counsellors" <?php if($resb["occupation"]=='Certified Human Resources and Industrial Relations Counsellors') { echo "selected";}?>>Certified Human Resources and Industrial Relations Counsellors</option>
+<option value="Guidance Counsellors" <?php if($resb["occupation"]=='Guidance Counsellors') { echo "selected";}?>>Guidance Counsellors</option>
+  <option value="Criminologists" <?php if($resb["occupation"]=='Criminologists') { echo "selected";}?>>Criminologists</option>
+ <option value="Dieticians" <?php if($resb["occupation"]=='Dieticians') { echo "selected";}?>>Dieticians</option>
+<option value="Occupational Therapists" <?php if($resb["occupation"]=='Occupational Therapists') { echo "selected";}?>>Occupational Therapists</option>
+<option value="Chartered Appraisers" <?php if($resb["occupation"]=='Chartered Appraisers') { echo "selected";}?>>Chartered Appraisers</option>
+<option value="Dental Hygienists" <?php if($resb["occupation"]=='Dental Hygienists') { echo "selected";}?>>Dental Hygienists</option>
+<option value="Nursing Assistants" <?php if($resb["occupation"]=='Nursing Assistants') { echo "selected";}?>>Nursing Assistants</option>
+                      </select>
 </div>
 
 
 <div class="col-md-12 form_input">
 <label>Annual Income</label>
-<input type="text" name="per_anum" class="form-control" ><br>
+<input type="text" value="<?php echo $resb['income']; ?> " name="income" class="form-control" ><br>
 </div>
+<div class="col-md-12 form_input">
+	<label>Employed in</label>  
+ <div class="form-group">
+							 
+<input type="radio" id="A12" name="E" value="Government" <?php if($resb["employed_in"]=='Government') { echo "checked";} ?>><label for="A12">Government</label>&nbsp;&nbsp;
+<input type="radio" id="A13" name="E" value="Private" <?php if($resb["employed_in"]=='Private') { echo "checked";} ?>><label for="A13">Private</label>&nbsp;&nbsp;
+<input type="radio" id="A14" name="E" value="Business" <?php if($resb["employed_in"]=='Business') { echo "checked";} ?>><label for="A14">Business</label>&nbsp;&nbsp;
+<input type="radio" id="A15" name="E" value="Defence" <?php if($resb["employed_in"]=='Defence') { echo "checked";} ?>><label for="A15">Defence</label>&nbsp;&nbsp;
+<input type="radio" id="A16" name="E" value="Self-Employed" <?php if($resb["employed_in"]=='Self-Employed') { echo "checked";} ?>><label for="A16">Self-Employed</label>
+<input type="radio" id="A17" name="E" value="Not Working" <?php if($resb["employed_in"]=='Not Working') { echo "checked";} ?>><label for="A17">Not Working</label>
+                                    </div>
+						</div>
 
-             <input type="submit" name="insert" id="insert" value="Update" class="btn btn-success" />
+
+             <input type="submit" name="submit" id="insert" value="Update" class="btn btn-success" />
                   
              </div>
              <div class="modal-footer">
@@ -549,180 +388,144 @@
 					<h4 class="modal-title">Family Details</h4>
 				</div>
 				<div class="modal-body">
-					
 						<div class="col-md-6 form_input">
-							<label>Family Values</label> <select class="selectpicker form-control" name="family_values">
-								<option value="Select Family Values">
-									Select Family Values
-								</option>
-								<option value="Orthodox">
-									Orthodox
-								</option>
-								<option value="Traditional">
-									Traditional
-								</option>
-								<option value="Moderate">
-									Moderate
-								</option>
-								<option value="Liberal">
-									Liberal
-								</option>
-							</select><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Father Status</label> <select class="selectpicker form-control" name="family_status">
-								<option value="Select Family Values">
-									Select Family Status
-								</option>
-								<option value="Middle Class">
-									Middle Class
-								</option>
-								<option value="Upper Middle Class">
-									Upper Middle Class
-								</option>
-								<option value="Rich">
-									Rich
-								</option>
-								<option value="Affluent">
-									Affluent
-								</option>
-							</select><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Family Type</label> <select class="selectpicker form-control" name="family_type">
-								<option value="Select Family Type">
-									Select Family Type
-								</option>
-								<option value="Joint">
-									Joint
-								</option>
-								<option value="Nuclear">
-									Nuclear
-								</option>
-							</select><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Mother Status</label> <select class="selectpicker form-control" name="mother_status">
-								<option value="select Mother status">
-									select Mother status
-								</option>
-								<option value="Working">
+							<label>Mother Status</label> 
+							<select class="selectpicker form-control" name="mother_status">
+								
+								<option value="Working" <?php if($resb["mother_status"]=='Working') { echo "selected";} ?>>
 									Working
 								</option>
-								<option value="Retired">
+								<option value="Retired" <?php if($resb["mother_status"]=='Retired') { echo "selected";} ?>>
 									Retired
 								</option>
-								<option value="Expired">
+								<option value="Expired" <?php if($resb["mother_status"]=='Expired') { echo "selected";} ?>>
 									Expired
 								</option>
-								<option value="HomeMaker">
+								<option value="HomeMaker" <?php if($resb["mother_status"]=='HomeMaker') { echo "selected";} ?>>
 									HomeMaker
 								</option>
-							</select><br>
+							</select>
 						</div>
 						<div class="col-md-6 form_input">
-							<label>Father Status</label> <select class="selectpicker form-control" name="father_status">
-								<option value="select Father status">
-									select Father status
-								</option>
-								<option value="Working">
+							<label>Father Status</label> 
+							<select class="selectpicker form-control" name="father_status">
+								
+								<option value="Working" <?php if($resb["father_status"]=='Working') { echo "selected";} ?>>
 									Working
 								</option>
-								<option value="Retired">
+								<option value="Retired" <?php if($resb["father_status"]=='Retired') { echo "selected";} ?>>
 									Retired
 								</option>
-								<option value="Expired">
+								<option value="Expired" <?php if($resb["father_status"]=='Expired') { echo "selected";} ?>>
 									Expired
 								</option>
 							</select><br>
 						</div>
 						<div class="col-md-6 form_input">
-							<label>Brothers</label> <select class="selectpicker form-control" name="brother_status">
-								<option value="No. of Brothers">
-									No. of Brothers
-								</option>
-								<option value="0">
+							<label>Brothers</label>
+							<select class="selectpicker form-control" name="brother_status">
+								
+								<option value="0" <?php if($resb["brother_status"]=='0') { echo "selected";} ?>>
 									0
 								</option>
-								<option value="1">
+								<option value="1" <?php if($resb["brother_status"]=='1') { echo "selected";} ?>>
 									1
 								</option>
-								<option value="2">
+								<option value="2" <?php if($resb["brother_status"]=='2') { echo "selected";} ?>>
 									2
 								</option>
-								<option value="3">
+								<option value="3" <?php if($resb["brother_status"]=='3') { echo "selected";} ?>>
 									3
 								</option>
-								<option value="4">
+								<option value="4" <?php if($resb["brother_status"]=='4') { echo "selected";} ?>>
 									4
 								</option>
-								<option value="5">
+								<option value="5" <?php if($resb["brother_status"]=='5') { echo "selected";} ?>>
 									5
 								</option>
-								<option value="6">
+								<option value="6" <?php if($resb["brother_status"]=='6') { echo "selected";} ?>>
 									6
 								</option>
-								<option value="7">
+								<option value="7" <?php if($resb["brother_status"]=='7') { echo "selected";} ?>>
 									7
 								</option>
-								<option value="8">
+								<option value="8" <?php if($resb["brother_status"]=='8') { echo "selected";} ?>>
 									8
 								</option>
-								<option value="9">
+								<option value="9" <?php if($resb["brother_status"]=='9') { echo "selected";} ?>>
 									9
 								</option>
-								<option value="10">
+								<option value="10" <?php if($resb["brother_status"]=='10') { echo "selected";} ?>>
 									10
 								</option>
 							</select><br>
 						</div>
 						<div class="col-md-6 form_input">
-							<label>Ancestral/Family origin:</label> <input class="form-control" name="ancestral" type="text"><br>
-						</div>
-						<div class="col-md-6 form_input">
-							<label>Sisters</label> <select class="selectpicker form-control" name="sister_status">
-								<option value="No. of Sister's">
-									No. of Sister's
-								</option>
-								<option value="0">
+							<label>Sisters</label> 
+							<select class="selectpicker form-control" name="sister_status">
+								
+								<option value="0" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									0
 								</option>
-								<option value="1">
+								<option value="1" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									1
 								</option>
-								<option value="2">
+								<option value="2" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									2
 								</option>
-								<option value="3">
+								<option value="3" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									3
 								</option>
-								<option value="4">
+								<option value="4" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									4
 								</option>
-								<option value="5">
+								<option value="5" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									5
 								</option>
-								<option value="6">
+								<option value="6" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									6
 								</option>
-								<option value="7">
+								<option value="7" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									7
 								</option>
-								<option value="8">
+								<option value="8" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									8
 								</option>
-								<option value="9">
+								<option value="9" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									9
 								</option>
-								<option value="10">
+								<option value="10" <?php if($resb["sister_status"]=='Widow') { echo "selected";} ?>>
 									10
 								</option>
 							</select><br>
 						</div>
 						<div class="col-md-12 form_input">
-<label>Ancestral/Family origin:</label> 
-<input class="form-control" value="<?php echo $resb['family_origin']; ?>" name="family_origin" type="text"><br>
-</div>
+							<label>Ancestral/Family origin:</label> 
+							<input class="form-control" value="<?php echo $resb['family_origin']; ?>" name="family_origin" type="text"><br>
+						</div>
+						
+						<div class="col-md-12 form_input">
+							<label>Family Values</label> 
+						<input type="radio" id="A26" name="I" value="Orthodox"<?php if($resb["family_values"]=='Orthodox') { echo "checked";} ?>><label for="A26">Orthodox</label>
+								<input type="radio" id="A27" name="I" value="Traditional" <?php if($resb["family_values"]=='Traditional') { echo "checked";} ?>><label for="A27">Traditional</label>
+								<input type="radio" id="A28" name="I" value="Moderate"  <?php if($resb["family_values"]=='Moderate') { echo "checked";} ?>><label for="A28">Moderate</label>
+								<input type="radio" id="A29" name="I" value="liberal"  <?php if($resb["family_values"]=='liberal') { echo "checked";} ?>><label for="A29">liberal</label>
+						</div>
+						<br>
+						<div class="col-md-12 form_input">
+							<label>Family Status</label> 
+							<input type="radio" id="A20" name="G" value="Middle Class" <?php if($resb["family_status"]=='Middle Class') { echo "checked";} ?>><label for="A20">Middle Class</label>
+								<input type="radio" id="A21" name="G" value="Upper Middle Class" <?php if($resb["family_status"]=='Upper Middle Class') { echo "checked";} ?>><label for="A21">Upper Middle Class</label>
+								<input type="radio" id="A22" name="G" value="Rich" <?php if($resb["family_status"]=='Rich') { echo "checked";} ?>><label for="A22">Rich</label>
+								<input type="radio" id="A23" name="G" value="Affluent" <?php if($resb["family_status"]=='Affluent') { echo "checked";} ?>><label for="A23">Affluent</label>
+						</div>
+						<br>
+						<div class="col-md-12 form_input">
+							<label>Family Type</label> 
+							<input type="radio" id="A24" name="H" value="Joint" <?php if($resb["family_type"]=='Joint') { echo "checked";} ?>><label for="A24">Joint</label>
+								<input type="radio" id="A25" name="H" value="Nuclear" <?php if($resb["family_type"]=='Nuclear') { echo "checked";} ?>><label for="A25">Nuclear</label>
+						</div>
+						<br>
 						<input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">
 				
 				</div>
@@ -733,8 +536,7 @@
 		</div>
 	</div><!--Family Details modal end-->
 	
-	<!--partner_basic_details_Modal For modal-->
-	<div class="modal fade" id="partner_basic_details_Modal">
+<div class="modal fade" id="partner_basic_details_Modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1157,8 +959,43 @@
 				<div class="modal-footer">
 					<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
 				</div>
-				</form>
+	
 			</div>
 		</div>
 	</div><!--partners What We Are Looking For-->
 	
+	<!--image update-->
+	<div class="modal fade" id="profile_pic_update">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Update profile pic</h4>
+				</div>
+				<div class="modal-body">
+					
+						<div class="avatar-upload">
+	
+      
+        <div class="avatar-preview">
+            <div id="imagePreview"  style="background-image: url(images/<?php echo $resb['image'];?>);">
+            </div>
+			<div class="paddright ">
+												<div class="col-md-2"><span>Image</span></div>
+												<div class="col-md-10 input-padding">
+													<input type="file" name="image" value="<?php echo $resb["image"]; ?>" required>
+
+										</div>
+												</div>
+        </div>
+    </div>
+				<input class="btn btn-success" id="insert" name="submit" type="submit" value="Update">	
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--image update-->
+	
+	</form>

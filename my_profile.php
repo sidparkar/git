@@ -19,6 +19,21 @@
 
 if(isset($_POST["submit"]))
 				 {
+						if(isset($_FILES['image'])){
+				$errors="";
+				$file_name=$_FILES['image']['name'];
+				$file_size=$_FILES['image']['size'];
+				$file_tmp=$_FILES['image']['tmp_name'];
+				$file_type=$_FILES['image']['type'];
+				//$file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+				//$extensions="jpg,jpeg,png,gif,tif";
+				
+				if($file_size > 5097152){
+				 $errors='File size must be exactly 5 MB';
+				}
+				 move_uploaded_file($file_tmp,"images/".time().$file_name);
+				 $image=time().$file_name;
+			}
 					$uprofile=$_POST["martial_status"];
 					$uheight=$_POST["height"];
 					$uage=$_POST["user_age"];
@@ -27,17 +42,49 @@ if(isset($_POST["submit"]))
 					$udrink=addslashes($_POST["B"]);
 					$umodal_smoke=addslashes($_POST["C"]);
 					$udisability=addslashes($_POST["D"]);
+					$ustar = addslashes($_POST["star"]);
+					$urashi = addslashes($_POST["rashi"]);
+					$udosh = addslashes($_POST['J']);
 					$ulocation=$_POST["place_of_birth"];
-					
+					$ueducation = $_POST["education"];;
+					$uoccupation = $_POST["occupation"];
+					$uincome = addslashes($_POST["income"]);
+					$uemployed = addslashes($_POST["E"]);
+					$ufather = $_POST["father_status"];
+					$umother = $_POST["mother_status"];
+					$ubrother = $_POST["brother_status"];
+					$usister = $_POST["sister_status"];
+					$uorigin = $_POST["family_origin"];
+					$u_fstatus = addslashes($_POST["G"]);
+					$u_ftype = addslashes($_POST["H"]);
+					$u_fvalues = addslashes($_POST["I"]);
+					// $p_age = addslashes($_POST["partner_age"]);
+					// $p_height = addslashes($_POST["partner_height"]);
+					// $p_martialstatus = addslashes($_POST["Z"]);
+					// $p_physicalstatus = addslashes($_POST["Y"]);
+					// $p_eatinghabits = addslashes($_POST["X"]);
+					// $p_drinkinghabits = addslashes($_POST["W"]);
+					// $p_smokinghabits = addslashes($_POST["V"]);
+					// $p_mothertongue = $_POST["partner_mothertongue"];
+					// $p_caste = $_POST["partner_caste"];
+					// $p_star = $_POST["partner_star"];
+					// $p_manglik = addslashes($_POST["U"]);
 					
 
-				 $sql="UPDATE user_info SET profile_for='$uprofile', height='$uheight',user_age='$uage', user_weight='$uweight', 
-				eating_habits='$ueating_habbit',drinking_habits='$udrink',smoking_habits='$umodal_smoke',disability='$udisability',birth_place='$ulocation' WHERE user_id=".$_SESSION["uid"];
-				 $res=$mysqli->query($sql);
-						 echo "<script>alert('Updated Successfully ..!');
-						window.location.href='my_profile.php';
-						 </script>";
-			}
+					$sql="UPDATE user_info SET image='$image',profile_for='$uprofile', height='$uheight',user_age='$uage', user_weight='$uweight', 
+					eating_habits='$ueating_habbit',drinking_habits='$udrink',smoking_habits='$umodal_smoke',disability='$udisability',star='$ustar',rashi='$urashi',manglik='$udosh',birth_place='$ulocation',education='$ueducation',occupation='$uoccupation',income='$uincome',employed_in='$uemployed',
+					father_status='$ufather',mother_status='$umother',brother_status='$ubrother',sister_status='$usister',family_origin='$uorigin',family_status='$u_fstatus',family_type='$u_ftype',family_values='$u_fvalues' WHERE user_id=".$_SESSION["uid"];
+					
+					$res=$mysqli->query($sql);
+					
+					echo "<script>alert('Updated Successfully ..!');
+					window.location.href='my_profile.php';
+					</script>";
+					
+					
+}
+		
+			
 				
 ?>
 <!DOCTYPE html>
@@ -111,14 +158,15 @@ if(isset($_POST["submit"]))
 			
 					<div class="profile">
 										<div class="col-sm-3 col-xs-12">
-												<img src="images/<?php echo $resb['image'];?>" width="100px">
-											<div class="st-profile__menu"><i class="fa fa-cog dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></i>
-					                          <ul class="dropdown-menu">
-					                            <li><a href="#">Delete</a></li>
-					                            <li><a href="#">Disable</a></li>
-					                          </ul>
+	<div class="avatar-upload">
+	 <a href="" data-toggle="modal" data-target="#profile_pic_update">
+        <div class="avatar-edit"></div></a>
+        <div class="avatar-preview">
+            <div id="imagePreview"  style="background-image: url(images/<?php echo $resb['image'];?>);">
 
-					                        </div>
+            </div>
+        </div>
+    </div>
 											</div>
 											<div class="col-sm-9 col-xs-12 padd0">
 												<h4>John Doe</h4>
@@ -191,7 +239,7 @@ if(isset($_POST["submit"]))
                     </div>
 					<div class="col-md-6">
               <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-              right: 10px;" > Edit <i class="fa fa-edit"></i></a>
+              right: 10px;" data-toggle="modal" data-target="#religion_data_Modal"> Edit <i class="fa fa-edit"></i></a>
 
                 </div>
                 </div>
@@ -241,7 +289,7 @@ if(isset($_POST["submit"]))
                     </div>
 					<div class="col-md-6">
               <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-              right: 10px;"> Edit <i class="fa fa-edit"></i></a>
+              right: 10px;" data-toggle="modal" data-target="#professional_preferences_data_Modal"> Edit <i class="fa fa-edit"></i></a>
 
                 </div>
                 </div>
@@ -267,7 +315,7 @@ if(isset($_POST["submit"]))
         </div>
 <div class="col-md-6">
   <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-  right: 10px;" href="my_profile.php?id=<?php echo $row["user_id"];?>"> Edit <i class="fa fa-edit"></i></a>
+  right: 10px;" data-toggle="modal" data-target="#family_details_data_Modal"> Edit <i class="fa fa-edit"></i></a>
 
     </div>
     </div>
@@ -278,7 +326,7 @@ if(isset($_POST["submit"]))
 <p>Family Values:<?php echo $resb['family_values'];?></p>
 <p>Family Type:<?php echo $resb['family_type'];?></p>
 <p>Family Status:<?php echo $resb['family_status'];?></p>
-<p>Ancestral/Family origin:</p>
+<p>Ancestral/Family origin:<?php echo $resb['family_origin'];?></p>
 
 </div>
 <div class="col-md-6">
@@ -305,7 +353,7 @@ if(isset($_POST["submit"]))
                         </div>
               <div class="col-md-6">
                   <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-                  right: 10px;" href="my_profile.php?id=<?php echo $row["user_id"];?>"> Edit <i class="fa fa-edit"></i></a>
+                  right: 10px;" data-toggle="modal" data-target="#partner_basic_details_Modal" > Edit <i class="fa fa-edit"></i></a>
 
                     </div>
                     </div>
@@ -339,7 +387,7 @@ if(isset($_POST["submit"]))
                       </div>
             <div class="col-md-6">
                 <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-                right: 10px;" href="my_profile.php?id=<?php echo $row["user_id"];?>"> Edit <i class="fa fa-edit"></i></a>
+                right: 10px;" data-toggle="modal" data-target="#professional_preferences_Modal"> Edit <i class="fa fa-edit"></i></a>
 
                   </div>
                   </div>
@@ -364,7 +412,7 @@ if(isset($_POST["submit"]))
                       </div>
             <div class="col-md-6">
                 <a style="cursor:pointer;color:#ffffff;text-decoration:none;background:#3a90d2 no-repeat left 3px;padding:3px 8px 3px 16px;display:inline-block;float: right;
-                right: 10px;" href="my_profile.php?id=<?php echo $row["user_id"];?>"> Edit <i class="fa fa-edit"></i></a>
+                right: 10px;" data-toggle="modal" data-target="#partners_Location_preferences_Modal"> Edit <i class="fa fa-edit"></i></a>
 
                   </div>
                   </div>
@@ -373,14 +421,14 @@ if(isset($_POST["submit"]))
   <div class="col-md-6">
 
       <p>Country:<?php echo $resb['partner_country']; ?></p>
-      <p>Residing State:</p>
+      
 
   </div>
   <div class="col-md-6">
 
 
       <p>Citizenship:<?php echo $resb['partner_citizenship']; ?></p>
-      <p>Residing City:</p>
+     
   </div>
   </div>
 
@@ -520,6 +568,22 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
+</script>
+<script>
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
 </script>
 <!-- jquery -->
 
